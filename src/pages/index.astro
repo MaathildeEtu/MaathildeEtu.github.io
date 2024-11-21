@@ -11,9 +11,30 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<Header />
+		
+		<!-- Head -->
+		<div class=" bg-head">
+
+			<Header />
+
+			<!-- Container -->
+			<div class=" mr-2 ml-2 sm:mr-8 sm:ml-8 md:mr-16 md:ml-mr-16 lg:mr-32 lg:ml-32">
+
+				<!-- Head - Content -->
+				<div class=" relative flex flex-row items-center pt-36 pb-36 pr-96 pl-20">
+
+					<h2 class=" text-3xl z-10 font-light">Je suis <span class=" font-bold">Mathilde Decoux</span>, étudiante en communication multimédia, graphiste et photographe basé en <span class=" italic font-medium">France.</span></h2>
+
+					<div class=" absolute h-80 right-16">
+						<img class=" object-cover h-full" src="./img-form-illustration.png" alt="">
+					</div>
+
+				</div>
+			</div>
+		</div>
+		
 		<main>
-			<h1>🧑‍🚀 Hello, Mathilde !</h1>
+			<!-- <h1>🧑‍🚀 Hello, Astronaut!</h1>
 			<p>
 				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
 				template serves as a lightweight, minimally-styled starting point for anyone looking to build
@@ -43,8 +64,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 					href="https://github.com/Charca/astro-blog-template"
 					>astro-blog-template
 				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+			</p> -->
 		</main>
+
 		<Footer />
 	</body>
 </html>
