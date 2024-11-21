@@ -3,7 +3,25 @@ import Navigation from './Navigation.astro';
 import TopNav from './Top-nav.astro';
 ---
 
-<header>
-	<TopNav />
+<!-- Head -->
+<header class=" bg-head">
+
+	<!-- <TopNav /> -->
 	<Navigation />
+
+	<!-- Container -->
+	<div class=" mr-2 ml-2 sm:mr-8 sm:ml-8 md:mr-16 md:ml-mr-16 lg:mr-32 lg:ml-32">
+
+		<!-- Head - Content -->
+		<div class=" relative flex flex-row items-center pt-24 lg:pt-32 pb-24 lg:pb-32 pr-4 lg:pr-40 pl-4 lg:pl-24">
+
+			<h2 class=" text-3xl z-10 font-light">Je suis <span class=" font-bold">Mathilde Decoux</span>, étudiante en communication multimédia, graphiste et photographe basé en <span class=" italic font-medium">France.</span></h2>
+
+			<div class=" absolute h-48 opacity-50 lg:h-60 lg:opacity-80 right-8 md:right-16">
+				<img class=" object-cover h-full" src="./img-form-illustration.png" alt="">
+			</div>
+
+		</div>
+	</div>
+
 </header>
