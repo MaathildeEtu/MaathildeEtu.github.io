@@ -4,20 +4,25 @@ import TopNav from './Top-nav.astro';
 ---
 
 <!-- Head -->
-<header class=" bg-head">
+<header class=" bg-gradient-head-green-light">
 
 	<!-- <TopNav /> -->
 	<Navigation />
 
 	<!-- Container -->
-	<div class=" mr-2 ml-2 sm:mr-8 sm:ml-8 md:mr-16 md:ml-mr-16 lg:mr-32 lg:ml-32">
+	<div class=" mr-2 ml-2 sm:mr-8 sm:ml-8 md:mr-16 md:ml-mr-16 lg:mr-32 lg:ml-32 xl:mr-52 xl:ml-52">
 
 		<!-- Head - Content -->
-		<div class=" relative flex flex-row items-center pt-24 lg:pt-32 pb-24 lg:pb-32 pr-4 lg:pr-40 pl-4 lg:pl-24">
+		<div class=" relative flex flex-col pt-24 pb-24 lg:pt-32 lg:pb-32 ">
 
-			<h2 class=" text-3xl z-10 font-light">Je suis <span class=" font-bold">Mathilde Decoux</span>, étudiante en communication multimédia, graphiste et photographe basé en <span class=" italic font-medium">France.</span></h2>
+			<div class=" z-10 relative flex flex-row justify-center pt-4 pb-4 lg:pr-40 lg:pl-24">
+				<h2 class=" uppercase text-6xl font-bold ">Mon portfolio</h2>
+				<h3 class=" absolute text-5xl z-10 font-light right-48 top-10 font-ephesis text-moutarde-light drop-shadow-xl">Mathilde Decoux</h3>
+			</div>
 
-			<div class=" absolute h-48 opacity-50 lg:h-60 lg:opacity-80 right-8 md:right-16">
+			<p class=" px-40 text-center text-lg leading-normal">Je suis <span class=" font-bold">Mathilde Decoux</span>, étudiante en communication multimédia, graphiste et photographe basé en <span class=" italic font-medium">France.</span></p>
+
+			<div class=" absolute h-52 opacity-40 lg:opacity-80 right-24 top-16 ">
 				<img class=" object-cover h-full" src="./img-form-illustration.png" alt="">
 			</div>
 

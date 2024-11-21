@@ -14,6 +14,20 @@
 	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
 	--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
 		0 16px 32px rgba(var(--gray), 33%);
+
+	/* Colors */
+	--moutarde-light : #D9A324;
+	--moutarde-dark : #B5881E;
+	--yellow-light : #FBC966;
+	--yellow-dark : #D0B577;
+	--beige-light : #F9D98E;
+	--beige-dark : #D0B577;
+	--green-light-800 : #007368;
+	--green-light-200 : #C4DFD8;
+	--green-dark-800 : #006057;
+	--green-dark-200 : #A4BAB4;
+	--blue-light : #B1D0E5;
+	--blue-dark : #94AEBF;
 }
 @font-face {
 	font-family: 'Atkinson';
