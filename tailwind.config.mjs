@@ -4,8 +4,8 @@ export default {
 	theme: {
 		extend: {
 			backgroundImage: {
-				'head': "linear-gradient(180deg, rgba(196,223,216,0.8) 0%, rgba(243,243,243) 100%), url('/img-header-portfolio-mathildedecoux.png')",
-				'gradient-head-green-light': "linear-gradient(180deg, rgba(196,223,216,0.8) 0%, rgba(243,243,243) 100%)",
+				'gradient-head': "linear-gradient(180deg, rgba(196,223,216,0.8) 0%, rgba(243,243,243) 100%), url('/img-header-portfolio-mathildedecoux.png')",
+				'gradient-head-green-light': "linear-gradient(180deg, rgba(196,223,216,0.8) 0%, rgba(243,243,243) 100%), url('/img-header-portfolio-mathildedecoux.png')",
 				'gradient-head-green-dark': "linear-gradient(180deg, rgba(0,115,104,1) 0%, rgba(243,243,243) 100%)",
 				'gradient-head-blue-light': "linear-gradient(180deg, rgba(177,208,229,1) 0%, rgba(243,243,243) 100%)",
 			},
