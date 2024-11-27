@@ -12,6 +12,7 @@ export default {
 			fontFamily: {
 				'league-script': 'League Script, cursive',
 				'ephesis': 'Ephesis, cursive;',
+				'quicksand': 'Quicksand, sans-serif;',
 			},
 			colors: {
 				'moutarde-light' : '#D9A324',

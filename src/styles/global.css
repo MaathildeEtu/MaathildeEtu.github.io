@@ -29,20 +29,7 @@
 	--blue-light : #B1D0E5;
 	--blue-dark : #94AEBF;
 }
-@font-face {
-	font-family: 'Atkinson';
-	src: url('/fonts/atkinson-regular.woff') format('woff');
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
-}
-@font-face {
-	font-family: 'Atkinson';
-	src: url('/fonts/atkinson-bold.woff') format('woff');
-	font-weight: 700;
-	font-style: normal;
-	font-display: swap;
-}
+
 body {
 	font-family: 'Atkinson', sans-serif;
 	margin: 0;
@@ -84,6 +71,7 @@ h1,
     margin: 0;
     font-weight: 500;
     line-height: 1.2;
+    font-family: 'Atkinson', sans-serif;
 }
 
 h1 {font-size: 2rem;}
@@ -107,6 +95,7 @@ p {
     margin: 0;
     line-height: 1.1rem;
     font-weight: 400;
+    font-family: quicksand;
 }
 
 ol,
