@@ -1,6 +1,6 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
+import HeaderSimple from '../components/HeaderSimple.astro';
 import Footer from '../components/Footer.astro';
 import TopNav from '../components/Top-nav.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
@@ -14,42 +14,63 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body class=" bg-white-light">
 
 		<TopNav />
-		<Header />
+		<HeaderSimple />
 		
 		<main>
 			
-			<!-- Tag -->
-			<div class="container">
-				<ul class=" flex flex-row flex-wrap gap-1 justify-start pb-2 pr-40 md:pr-20">
-					<li class=" px-4 py-1 max-w-max rounded-lg bg-[#D9A324] hover:bg-[#B5881E] text-white text-sm">#Réseaux Sociaux</li>
-					<li class=" px-4 py-1 max-w-max rounded-lg bg-[#D9A324] hover:bg-[#B5881E] text-white text-sm">#Graphisme</li>
-					<li class=" px-4 py-1 max-w-max rounded-lg bg-[#D9A324] hover:bg-[#B5881E] text-white text-sm">#Photographie</li>
-					<li class=" px-4 py-1 max-w-max rounded-lg bg-[#D9A324] hover:bg-[#B5881E] text-white text-sm">#Webdesign</li>
-					<li class=" px-4 py-1 max-w-max rounded-lg bg-[#D9A324] hover:bg-[#B5881E] text-white text-sm">#Montage</li>
-				</ul>
-			</div>
-
-			<!-- Mes Projets -->
-			<div></div>
-
-			<!-- About Me -->
-			<div class=" relative pb-5 container">
-
-				<div class=" absolute invisible lg:visible h-16 z-10 top-32 right-4"><img class=" object-cover h-full drop-shadow-xl" src="/element/element-blue-pointilletlarge.png" alt=""></div>
-				<div class=" absolute h-6 z-10 bottom-2 left-16"><img class=" object-cover h-full drop-shadow-xl" src="/element/element-yellowdark-cross.png" alt=""></div>
-				<div class=" absolute h-6 z-10 bottom-2 left-28"><img class=" object-cover h-full drop-shadow-xl" src="/element/element-yellowdark-cross.png" alt=""></div>
-
-				<div class=" relative grid lg:grid-cols-3 p-10 rounded-2xl bg-[#007368]">
-					<div class=" col-span-2 flex flex-col gap-2">
-						<h3 class=" text-white text-2xl">About Me</h3>
-						<p class=" text-white text-sm">Passionnée par la communication et le design, j'ai acquis des compétences variées dans la création de contenus, la gestion de projets et le développement web. Polyvalente et créative, je m'investis dans des projets qui allient innovation et impact, en apportant des solutions adaptées aux besoins de chaque client. Mon objectif est de valoriser chaque projet grâce à une stratégie de communication efficace et des visuels percutants.</p>
-						<div class=" flex justify-end"><a class=" py-1 px-4 rounded-lg text-[#007368] bg-white text-md" href="/about">About Me</a></div>
-					</div>
-					<div class=" absolute invisible lg:visible bottom-8 right-14 h-72 xl:h-80">
-						<img class=" object-cover h-full drop-shadow-xl" src="/img-profil-mathilde-decoux-portfolio.png" alt="">
-					</div>
-				</div>
-			</div>
+			<div>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+					labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
+					viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
+					adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
+					et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
+					vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
+					sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+				</p>
+			
+				<p>
+					Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
+					tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
+					blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
+					porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
+					massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
+					Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
+					bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
+					massa massa ultricies mi.
+				</p>
+			
+				<p>
+					Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
+					suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
+					nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
+					turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
+					dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
+					semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
+					vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
+					facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
+					vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
+					urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
+				</p>
+			
+				<p>
+					Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
+					viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
+					scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
+					gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
+					pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
+					blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
+					cursus metus aliquam eleifend mi.
+				</p>
+			
+				<p>
+					Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
+					nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
+					tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
+					ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
+					proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
+				</p>
+			<div>
 
 		</main>
 
