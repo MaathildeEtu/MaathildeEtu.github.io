@@ -1,0 +1,46 @@
+---
+import { getCollection } from "astro:content";
+import BaseBlog from "../../layouts/BaseBlog.astro";
+import FormattedDate from '../../components/FormattedDate.astro';
+
+export async function getStaticPaths() {
+    const allPosts = await getCollection("blog");
+    const uniqueTags = [
+    ...new Set(allPosts.map((post) => post.data.tags).flat()),
+];
+
+return uniqueTags.map((tag) => {
+    const filteredPosts = allPosts.filter((post) =>
+        post.data.tags.includes(tag)
+    );
+    return {
+        params: { tag },
+        props: { posts: filteredPosts },
+    };
+});
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<BaseBlog>
+    <ul class=" flex flex-wrap gap-8 list-none m-0 p-0 md:gap-4">
+        {
+            posts.map((post) => (
+                <li class="calcul first:basis-full first:mb-4 first:text-center md:w-full md:text-center md:first:mb-0">
+                    <a class=" block" href={`/blog/${post.slug}/`}>
+
+                        <img class=" w-full h-72 mb-2 rounded-xl" src={post.data.heroImage} alt="" />
+                        <h3 class=" m-0 text-black md:first:text-2xl">{post.data.title}</h3>
+                        <p class=" m-0 text-black">
+                            <FormattedDate date={post.data.pubDate} />
+                        </p>
+                        <p>{post.data.description}</p>
+
+                    </a>
+                </li>
+            ))
+        }
+    </ul>
+</BaseBlog>

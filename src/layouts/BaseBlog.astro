@@ -1,10 +1,9 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import BaseHead from '../components/BaseHead.astro';
+import HeaderSimple from '../components/HeaderSimple.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -32,7 +31,7 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 		</style>
 	</head>
 	<body class=" bg-white-light">
-		<Header />
+		<HeaderSimple />
 
 		<p></p>
 
@@ -49,24 +48,9 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 				</div>
 
 				<!-- Card -->
-				<ul class=" flex flex-wrap gap-8 list-none m-0 p-0 md:gap-4">
-					{
-						posts.map((post) => (
-							<li class="calcul first:basis-full first:mb-4 first:text-center md:w-full md:text-center md:first:mb-0">
-								<a class=" block" href={`/blog/${post.slug}/`}>
-
-									<img class=" w-full h-72 mb-2 rounded-xl" src={post.data.heroImage} alt="" />
-									<h3 class=" m-0 text-black md:first:text-2xl">{post.data.title}</h3>
-									<p class=" m-0 text-black">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-									<p>{post.data.description}</p>
-
-								</a>
-							</li>
-						))
-					}
-				</ul>
+				<div>
+                    <slot />
+                </div>
 			</section>
 		</main>
 
