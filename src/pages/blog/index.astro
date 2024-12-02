@@ -1,8 +1,9 @@
 ---
 import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
+import Navigation from '../../components/Navigation.astro';
+import TopNav from '../../components/Top-nav.astro';
 import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_BLOG } from '../../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 
@@ -32,9 +33,28 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 		</style>
 	</head>
 	<body class=" bg-white-light">
-		<Header />
 
-		<p></p>
+		<TopNav />
+
+		<!-- Head -->
+		<header class=" bg-gradient-head-green-light bg-center bg-cover">
+			
+			<Navigation />
+
+			<!-- Container -->
+			<div class="container">
+
+				<!-- Head - Content -->
+				<div class=" relative flex flex-col pt-16 pb-16">
+
+					<div class=" z-10 relative flex flex-row justify-center pt-4 pb-4 lg:pr-40 lg:pl-24">
+						<h2 class=" text-center uppercase text-6xl xl:text-7xl font-bold ">{SITE_BLOG}</h2>
+					</div>
+
+				</div>
+			</div>
+
+		</header>
 
 		<main class=" pb-20">
 			<section class="container">

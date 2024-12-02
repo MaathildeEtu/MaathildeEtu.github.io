@@ -1,9 +1,9 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import HeaderSimple from '../components/HeaderSimple.astro';
-import Footer from '../components/Footer.astro';
+import Navigation from '../components/Navigation.astro';
 import TopNav from '../components/Top-nav.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_CONTACT } from '../consts';
 ---
 
 <!doctype html>
@@ -14,9 +14,28 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body class=" bg-white-light">
 
 		<TopNav />
-		<HeaderSimple />
+
+		<!-- Head -->
+		<header class=" bg-gradient-head-green-light bg-center bg-cover">
+			
+			<Navigation />
+
+			<!-- Container -->
+			<div class="container">
+
+				<!-- Head - Content -->
+				<div class=" relative flex flex-col pt-16 pb-16">
+
+					<div class=" z-10 relative flex flex-row justify-center pt-4 pb-4 lg:pr-40 lg:pl-24">
+						<h2 class=" text-center uppercase text-6xl xl:text-7xl font-bold ">{SITE_CONTACT}</h2>
+					</div>
+
+				</div>
+			</div>
+
+		</header>
 		
-		<main>
+		<main class="container pb-20">
 			
 			<div>
 				<p>

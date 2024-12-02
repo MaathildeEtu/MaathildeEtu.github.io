@@ -3,3 +3,7 @@
 
 export const SITE_TITLE = 'Mathilde Portfolio';
 export const SITE_DESCRIPTION = 'Bienvenue sur mon portfolio';
+export const SITE_URL = 'https://maathildeetu.github.io';
+export const SITE_CONTACT = 'Contact';
+export const SITE_BLOG = 'Blog';
+export const SITE_ABOUT = 'About Me';
