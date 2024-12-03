@@ -13,6 +13,7 @@ const blog = defineCollection({
 		tags: z.array(z.string()),
 		clients: z.string(),
 		brief: z.string(),
+		livrables: z.array(z.object({title: z.string(), description: z.string()})),
 	}),
 });
 

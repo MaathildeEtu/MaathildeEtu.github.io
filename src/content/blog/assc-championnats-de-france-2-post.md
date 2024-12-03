@@ -4,8 +4,15 @@ description: 'Les Championnats de France de Sauvetage Sportif Short Course revie
 pubDate: 'Dec 21 2024'
 heroImage: '/blog-placeholder-2.jpg'
 tags: ['graphisme', 'reseaux', 'gestion de projet']
-clients : 'Fédération Française de Sauvetage et de Secourisme'
-brief : 'La deuxième édition des Championnats de France Short Course se tiendra les 21 et 22 décembre 2024 au centre aquatique Balsan’éo à Châteauroux. Cet événement national rassemble plus de 300 compétiteurs, 60 officiels, 80 bénévoles, et 150 membres du staff des équipes. Créer des visuels de communication attrayants et cohérents pour promouvoir l’événement auprès des différentes cibles : compétiteurs, officiels, bénévoles, spectateurs, et médias. Les visuels doivent refléter à la fois l’esprit compétitif, sportif et convivial de cet événement majeur.'
+clients: 'Fédération Française de Sauvetage et de Secourisme'
+brief: 'La deuxième édition des Championnats de France Short Course se tiendra les 21 et 22 décembre 2024 au centre aquatique Balsan’éo à Châteauroux. Cet événement national rassemble plus de 300 compétiteurs, 60 officiels, 80 bénévoles, et 150 membres du staff des équipes. Créer des visuels de communication attrayants et cohérents pour promouvoir l’événement auprès des différentes cibles : compétiteurs, officiels, bénévoles, spectateurs, et médias. Les visuels doivent refléter à la fois l’esprit compétitif, sportif et convivial de cet événement majeur.'
+livrables : [
+  { title: 'Affiche Principale', description: 'Format A4/A3, pour impression et diffusion digitale.' },
+  { title: 'Bannière web', description: 'Pour les réseaux sociaux et le site officiel.' },
+  { title: 'Flyers', description: 'Destinés au grand public et aux partenaires locaux.' },
+  { title: 'Posts et stories', description: 'Visuels optimisés pour Instagram et Facebook.' },
+  { title: 'Signalétique événementielle', description: 'Panneaux directionnels, roll-ups, etc.' },
+]
 ---
 
 
