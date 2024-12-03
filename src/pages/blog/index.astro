@@ -79,7 +79,7 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 								<li class=" first:max-w-full first:col-start-1 first:col-end-4 w-full first:mb-4 first:text-center md:text-center md:first:mb-0">
 									<a class=" block" href={`/blog/${post.slug}/`}>
 
-										<img class=" w-full h-72 mb-2 rounded-xl" src={post.data.heroImage} alt="" />
+										<img class=" w-full h-72 mb-2 rounded-xl grayscale hover:grayscale-0" src={post.data.heroImage} alt="" />
 										<h3 class=" m-0 text-black md:first:text-2xl">{post.data.title}</h3>
 										<p class=" m-0 text-black">
 											<FormattedDate date={post.data.pubDate} />
