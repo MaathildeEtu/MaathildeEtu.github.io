@@ -32,66 +32,71 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 		</style>
 	</head>
 	<body class=" bg-white-light">
+		
+		<div class="flex flex-col min-h-dvh">
 
-		<TopNav />
+			<TopNav />
 
-		<!-- Head -->
-		<header class=" bg-gradient-head-green-light bg-center bg-cover">
-			
-			<Navigation />
+			<!-- Head -->
+			<header class=" bg-gradient-head-green-light bg-center bg-cover">
+				
+				<Navigation />
 
-			<!-- Container -->
-			<div class="container">
+				<!-- Container -->
+				<div class="container">
 
-				<!-- Head - Content -->
-				<div class=" relative flex flex-col pt-16 pb-16">
+					<!-- Head - Content -->
+					<div class=" relative flex flex-col pt-16 pb-16">
 
-					<div class=" z-10 flex flex-row justify-center pt-4 pb-4">
-						<h2 class=" text-center uppercase text-6xl xl:text-7xl font-bold ">{SITE_BLOG}</h2>
+						<div class=" z-10 flex flex-row justify-center pt-4 pb-4">
+							<h2 class=" text-center uppercase text-6xl xl:text-7xl font-bold ">{SITE_BLOG}</h2>
+						</div>
+
+					</div>
+				</div>
+
+			</header>
+
+			<main class=" pb-20">
+				<section class="container">
+					<!-- Tag -->
+					<div class="container">
+						<ul class=" flex flex-row flex-wrap gap-1 justify-start pb-2 pr-40 md:pr-20">
+							<li class=" px-4 py-1 max-w-max rounded-lg bg-[#D9A324] hover:bg-[#B5881E] text-white text-sm">
+								<a href="/blog">All</a>
+							</li>
+							{tags.map((tag) => (
+								<li class=" px-4 py-1 max-w-max rounded-lg bg-[#D9A324] hover:bg-[#B5881E] text-white text-sm">
+									<a href={`/blog/${tag}/`}>{tag}</a>
+								</li>))}
+						</ul>
 					</div>
 
-				</div>
-			</div>
+					<!-- Card -->
+					<ul class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 gap-y-6 list-none m-0 p-0 md:gap-4">
+						{
+							posts.map((post) => (
+								<li class=" first:max-w-full first:col-start-1 first:col-end-4 w-full first:mb-4 first:text-center md:text-center md:first:mb-0">
+									<a class=" block" href={`/blog/${post.slug}/`}>
 
-		</header>
+										<img class=" w-full h-72 mb-2 rounded-xl" src={post.data.heroImage} alt="" />
+										<h3 class=" m-0 text-black md:first:text-2xl">{post.data.title}</h3>
+										<p class=" m-0 text-black">
+											<FormattedDate date={post.data.pubDate} />
+										</p>
+										<p class=" m-0 text-black text-sm px-6 leading-4">{post.data.description}</p>
 
-		<main class=" pb-20">
-			<section class="container">
-				<!-- Tag -->
-				<div class="container">
-					<ul class=" flex flex-row flex-wrap gap-1 justify-start pb-2 pr-40 md:pr-20">
-						<li class=" px-4 py-1 max-w-max rounded-lg bg-[#D9A324] hover:bg-[#B5881E] text-white text-sm">
-							<a href="/blog">All</a>
-						</li>
-						{tags.map((tag) => (
-							<li class=" px-4 py-1 max-w-max rounded-lg bg-[#D9A324] hover:bg-[#B5881E] text-white text-sm">
-								<a href={`/blog/${tag}/`}>{tag}</a>
-							</li>))}
+									</a>
+								</li>
+							))
+						}
 					</ul>
-				</div>
+				</section>
+			</main>
 
-				<!-- Card -->
-				<ul class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 gap-y-6 list-none m-0 p-0 md:gap-4">
-					{
-						posts.map((post) => (
-							<li class=" first:max-w-full first:col-start-1 first:col-end-4 w-full first:mb-4 first:text-center md:text-center md:first:mb-0">
-								<a class=" block" href={`/blog/${post.slug}/`}>
+			<Footer />
 
-									<img class=" w-full h-72 mb-2 rounded-xl" src={post.data.heroImage} alt="" />
-									<h3 class=" m-0 text-black md:first:text-2xl">{post.data.title}</h3>
-									<p class=" m-0 text-black">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-									<p class=" m-0 text-black text-sm px-6 leading-4">{post.data.description}</p>
+		</div>
 
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
-		</main>
-
-		<Footer />
 	</body>
 </html>
