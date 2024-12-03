@@ -34,14 +34,14 @@
 }
 
 body {
-	font-family: 'Atkinson', sans-serif;
 	margin: 0;
 	padding: 0;
-	text-align: left;
 	background-size: 100% 600px;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: rgb(var(--gray-dark));
+    text-align: left;
+    font-family: quicksand;
 	font-size: 20px;
 	line-height: 1.7;
     background-color: rgba(243,243,243);

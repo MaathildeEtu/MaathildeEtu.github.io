@@ -12,7 +12,8 @@ const blog = defineCollection({
 		heroImage: z.string().optional(),
 		tags: z.array(z.string()),
 		clients: z.string(),
-		brief: z.string(),
+		contexte: z.string(),
+		objectifs: z.array(z.object({gras: z.string(), light: z.string()})),
 		livrables: z.array(z.object({title: z.string(), description: z.string()})),
 	}),
 });
