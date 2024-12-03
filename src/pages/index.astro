@@ -13,73 +13,77 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	</head>
 	<body>
 
-		<TopNav />
-		<Header />
-		
-		<main>
+		<div class="flex flex-col min-h-dvh">
+
+			<TopNav />
+			<Header />
 			
-			<!-- Tag -->
-			<section class=" m-4 sm:m-0">
-				<div class="container">
-					<ul class=" flex flex-row flex-wrap gap-1 justify-start pb-2 pr-40 md:pr-20">
-						<li class=" px-4 py-1 max-w-max rounded-lg bg-[#D9A324] hover:bg-[#B5881E] text-white text-sm">#Réseaux Sociaux</li>
-						<li class=" px-4 py-1 max-w-max rounded-lg bg-[#D9A324] hover:bg-[#B5881E] text-white text-sm">#Graphisme</li>
-						<li class=" px-4 py-1 max-w-max rounded-lg bg-[#D9A324] hover:bg-[#B5881E] text-white text-sm">#Photographie</li>
-						<li class=" px-4 py-1 max-w-max rounded-lg bg-[#D9A324] hover:bg-[#B5881E] text-white text-sm">#Webdesign</li>
-						<li class=" px-4 py-1 max-w-max rounded-lg bg-[#D9A324] hover:bg-[#B5881E] text-white text-sm">#Montage</li>
-					</ul>
-				</div>
-			</section>
+			<main class=" grow">
+				
+				<!-- Tag -->
+				<section class=" m-4 sm:m-0">
+					<div class="container">
+						<ul class=" flex flex-row flex-wrap gap-1 justify-start pb-2 pr-40 md:pr-20">
+							<li class=" px-4 py-1 max-w-max rounded-lg bg-[#D9A324] hover:bg-[#B5881E] text-white text-sm">#Réseaux Sociaux</li>
+							<li class=" px-4 py-1 max-w-max rounded-lg bg-[#D9A324] hover:bg-[#B5881E] text-white text-sm">#Graphisme</li>
+							<li class=" px-4 py-1 max-w-max rounded-lg bg-[#D9A324] hover:bg-[#B5881E] text-white text-sm">#Photographie</li>
+							<li class=" px-4 py-1 max-w-max rounded-lg bg-[#D9A324] hover:bg-[#B5881E] text-white text-sm">#Webdesign</li>
+							<li class=" px-4 py-1 max-w-max rounded-lg bg-[#D9A324] hover:bg-[#B5881E] text-white text-sm">#Montage</li>
+						</ul>
+					</div>
+				</section>
 
-			<!-- Mes Projets -->
-			<section class=" m-4 sm:m-0">
-				<div class="container">
-					<div></div>
-				</div>
-			</section>
+				<!-- Mes Projets -->
+				<section class=" m-4 sm:m-0">
+					<div class="container">
+						<div></div>
+					</div>
+				</section>
 
-			<!-- About Me -->
-			<section class=" m-4 sm:m-0">
-				<div class=" relative pb-5 container">
+				<!-- About Me -->
+				<section class=" m-4 sm:m-0">
+					<div class=" relative pb-5 container">
 
-					<div class=" absolute invisible lg:visible h-16 z-10 top-32 right-4"><img class=" object-cover h-full drop-shadow-xl" src="/element/element-blue-pointilletlarge.png" alt=""></div>
-					<div class=" absolute h-6 z-10 bottom-2 left-16"><img class=" object-cover h-full drop-shadow-xl" src="/element/element-yellowdark-cross.png" alt=""></div>
-					<div class=" absolute h-6 z-10 bottom-2 left-28"><img class=" object-cover h-full drop-shadow-xl" src="/element/element-yellowdark-cross.png" alt=""></div>
+						<div class=" absolute invisible lg:visible h-16 z-10 top-32 right-4"><img class=" object-cover h-full drop-shadow-xl" src="/element/element-blue-pointilletlarge.png" alt=""></div>
+						<div class=" absolute h-6 z-10 bottom-2 left-16"><img class=" object-cover h-full drop-shadow-xl" src="/element/element-yellowdark-cross.png" alt=""></div>
+						<div class=" absolute h-6 z-10 bottom-2 left-28"><img class=" object-cover h-full drop-shadow-xl" src="/element/element-yellowdark-cross.png" alt=""></div>
 
-					<div class=" relative grid lg:grid-cols-3 p-10 rounded-2xl bg-[#007368]">
-						<div class=" col-span-2 flex flex-col gap-2">
-							<h3 class=" text-white text-2xl">About Me</h3>
-							<p class=" text-white text-sm">Passionnée par la communication et le design, j'ai acquis des compétences variées dans la création de contenus, la gestion de projets et le développement web. Polyvalente et créative, je m'investis dans des projets qui allient innovation et impact, en apportant des solutions adaptées aux besoins de chaque client. Mon objectif est de valoriser chaque projet grâce à une stratégie de communication efficace et des visuels percutants.</p>
-							<div class=" flex justify-end"><a class=" py-1 px-4 rounded-lg text-[#007368] bg-white text-md" href="/about">About Me</a></div>
-						</div>
-						<div class=" absolute invisible lg:visible bottom-8 right-14 h-72 xl:h-80">
-							<img class=" object-cover h-full drop-shadow-xl" src="/img-profil-mathilde-decoux-portfolio.png" alt="">
+						<div class=" relative grid lg:grid-cols-3 p-10 rounded-2xl bg-[#007368]">
+							<div class=" col-span-2 flex flex-col gap-2">
+								<h3 class=" text-white text-2xl">About Me</h3>
+								<p class=" text-white text-sm">Passionnée par la communication et le design, j'ai acquis des compétences variées dans la création de contenus, la gestion de projets et le développement web. Polyvalente et créative, je m'investis dans des projets qui allient innovation et impact, en apportant des solutions adaptées aux besoins de chaque client. Mon objectif est de valoriser chaque projet grâce à une stratégie de communication efficace et des visuels percutants.</p>
+								<div class=" flex justify-end"><a class=" py-1 px-4 rounded-lg text-[#007368] bg-white text-md" href="/about">About Me</a></div>
+							</div>
+							<div class=" absolute invisible lg:visible bottom-8 right-14 h-72 xl:h-80">
+								<img class=" object-cover h-full drop-shadow-xl" src="/img-profil-mathilde-decoux-portfolio.png" alt="">
+							</div>
 						</div>
 					</div>
+				</section>
+
+				<!-- Illustration -->
+				<div class=" pt-5 pb-10 container">
+					<div class=" flex justify-center h-60"><img src="/img-illustration-mathilde-decoux-portfolio.png" alt=""></div>
 				</div>
-			</section>
 
-			<!-- Illustration -->
-			<div class=" pt-5 pb-10 container">
-				<div class=" flex justify-center h-60"><img src="/img-illustration-mathilde-decoux-portfolio.png" alt=""></div>
-			</div>
-
-			<!-- Galerie -->
-			<section class=" m-4 sm:m-0">
-				<div class="container">
-					<div>
-						<div><img src="" alt=""></div>
-						<div><img src="" alt=""></div>
-						<div><img src="" alt=""></div>
-						<div><img src="" alt=""></div>
+				<!-- Galerie -->
+				<section class=" m-4 sm:m-0">
+					<div class="container">
+						<div>
+							<div><img src="" alt=""></div>
+							<div><img src="" alt=""></div>
+							<div><img src="" alt=""></div>
+							<div><img src="" alt=""></div>
+						</div>
 					</div>
-				</div>
-			</section>
+				</section>
 
-		</main>
+			</main>
 
-		<Footer />
+			<Footer />
 
+		</div>
+		
 	</body>
 
 </html>
