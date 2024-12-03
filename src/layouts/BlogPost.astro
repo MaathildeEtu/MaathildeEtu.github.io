@@ -8,7 +8,7 @@ import FormattedDate from '../components/FormattedDate.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage, tags } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, tags, clients, brief } = Astro.props;
 ---
 
 <html lang="en">
@@ -36,11 +36,15 @@ const { title, description, pubDate, updatedDate, heroImage, tags } = Astro.prop
 			<article class=" m-4 sm:m-0">
 				<div class=" container">
 
+					<!-- Image -->
 					<div class=" w-full">
 						{heroImage && <img class=" block m-0 rounded-3xl shadow-lg w-full" width={1020} height={200} src={heroImage} alt="" />}
 					</div>
+					<!-- Image -->
 
 					<div class=" w-full p-8">
+
+						<!-- Head Information -->
 						<div class=" flex flex-col justify-center items-center pb-8 gap-2">
 							<div class="date">
 								<FormattedDate date={pubDate} />
@@ -59,6 +63,38 @@ const { title, description, pubDate, updatedDate, heroImage, tags } = Astro.prop
 								))}
 							</ul>
 							<hr />
+						</div>
+						<!-- Head Information -->
+
+						<!-- Autre -->
+						<div class=" flex flex-col gap-4 pb-8">
+							<h2>Le projet</h2>
+
+
+							<div class=" flex flex-col md:flex-row gap-16">
+								<div class=" w-2/3 py-4 flex flex-col gap-4">
+									<div>
+										<h3>Le client</h3>
+										<p>{clients}</p>
+									</div>
+
+									<div>
+										<h3>Le brief</h3>
+										<p>{brief}</p>
+									</div>
+								</div>
+	
+								<div class=" w-1/3 bg-red-300 p-4 rounded-md">
+									<h3>Livrables attendus</h3>
+									<ul class="flex flex-col gap-2">
+										<li class="flex flex-col">Affiche principale : <p>format A4/A3, pour impression et diffusion digitale.</p></li>
+										<li class="flex flex-col">Bannière web : <p>pour les réseaux sociaux et le site officiel.</p></li>
+										<li class="flex flex-col">Flyers : <p>destinés au grand public et aux partenaires locaux.</p></li>
+										<li class="flex flex-col">Posts et stories : <p>visuels optimisés pour Instagram et Facebook.</p></li>
+										<li class="flex flex-col">Signalétique événementielle : <p>panneaux directionnels, roll-ups, etc.</p></li>
+									</ul>
+								</div>
+							</div>
 						</div>
 
 						<slot />
