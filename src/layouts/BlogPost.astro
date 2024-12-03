@@ -1,7 +1,8 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
+import Navigation from '../components/Navigation.astro';
+import TopNav from '../components/Top-nav.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 
@@ -13,75 +14,55 @@ const { title, description, pubDate, updatedDate, heroImage, tags } = Astro.prop
 <html lang="en">
 	<head>
 		<BaseHead title={title} description={description} />
-		<style>
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
-			}
-			.hero-image {
-				width: 100%;
-			}
-			.hero-image img {
-				display: block;
-				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
-			}
-			.prose {
-				width: 720px;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
-			}
-			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
-			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
-			}
-			.date {
-				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
-		</style>
 	</head>
 
 	<body>
-		<Header />
-		<main>
-			<article>
-				<div class="hero-image">
-					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
-				</div>
-				<div class="prose">
-					<div class="title">
-						<div class="date">
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
-						</div>
-						<h1>{title}</h1>
-						<ul>
-							{tags.map((tags) => (
-								<li>{tags}</li>
-							))}
-						</ul>
-						<hr />
+
+		<TopNav />
+		<!-- Head -->
+		<header class=" bg-gradient-head-green-light bg-center bg-cover">
+			<Navigation />
+			<!-- Container -->
+			<div class="container">
+				<!-- Head - Content -->
+				<div class=" relative flex flex-col py-4">
+					<div class=" z-10 flex flex-row justify-center">
 					</div>
-					<slot />
+				</div>
+			</div>
+		</header>
+
+		<main>
+			<article class=" m-4 sm:m-0">
+				<div class=" container">
+
+					<div class=" w-full">
+						{heroImage && <img class=" block m-0 rounded-3xl shadow-lg w-full" width={1020} height={200} src={heroImage} alt="" />}
+					</div>
+
+					<div class=" w-full p-8">
+						<div class=" flex flex-col justify-center items-center pb-8 gap-2">
+							<div class="date">
+								<FormattedDate date={pubDate} />
+								{
+									updatedDate && (
+										<div class="last-updated-on">
+											Last updated on <FormattedDate date={updatedDate} />
+										</div>
+									)
+								}
+							</div>
+							<h1 class=" font-bold text-4xl">{title}</h1>
+							<ul class=" flex flex-row gap-2">
+								{tags.map((tags) => (
+									<li class=" px-4 py-1 max-w-max rounded-lg bg-[#D9A324] hover:bg-[#B5881E] text-white text-sm">#{tags}</li>
+								))}
+							</ul>
+							<hr />
+						</div>
+
+						<slot />
+					</div>
 				</div>
 			</article>
 		</main>
