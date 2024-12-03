@@ -82,7 +82,7 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 									<p class=" m-0 text-black">
 										<FormattedDate date={post.data.pubDate} />
 									</p>
-									<p>{post.data.description}</p>
+									<p class=" m-0 text-black text-sm px-6 leading-4">{post.data.description}</p>
 
 								</a>
 							</li>

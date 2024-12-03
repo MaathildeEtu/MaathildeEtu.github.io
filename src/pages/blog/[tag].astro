@@ -25,10 +25,11 @@ const { posts } = Astro.props;
 ---
 
 <BaseBlog>
-    <ul class=" flex flex-wrap gap-8 list-none m-0 p-0 md:gap-4">
+    <!-- Card -->
+    <ul class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 gap-y-6 list-none m-0 p-0 md:gap-4">
         {
             posts.map((post) => (
-                <li class="calcul first:basis-full first:mb-4 first:text-center md:w-full md:text-center md:first:mb-0">
+                <li class=" first:max-w-full first:col-start-1 first:col-end-4 w-full first:mb-4 first:text-center md:text-center md:first:mb-0">
                     <a class=" block" href={`/blog/${post.slug}/`}>
 
                         <img class=" w-full h-72 mb-2 rounded-xl" src={post.data.heroImage} alt="" />
@@ -36,7 +37,7 @@ const { posts } = Astro.props;
                         <p class=" m-0 text-black">
                             <FormattedDate date={post.data.pubDate} />
                         </p>
-                        <p>{post.data.description}</p>
+                        <p class=" m-0 text-black text-sm px-6 leading-4">{post.data.description}</p>
 
                     </a>
                 </li>
