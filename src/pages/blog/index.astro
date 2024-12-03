@@ -57,11 +57,11 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 
 			</header>
 
-			<main class=" pb-20">
-				<section class="container">
+			<main class=" m-4 sm:m-0 pb-20">
+				<section class=" container">
 					<!-- Tag -->
-					<div class="container">
-						<ul class=" flex flex-row flex-wrap gap-1 justify-start pb-2 pr-40 md:pr-20">
+					<div>
+						<ul class=" flex flex-row flex-wrap gap-1 justify-start pb-2 pr-10 md:pr-20">
 							<li class=" px-4 py-1 max-w-max rounded-lg bg-[#D9A324] hover:bg-[#B5881E] text-white text-sm">
 								<a href="/blog">All</a>
 							</li>
@@ -76,15 +76,12 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 					<ul class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 gap-y-6 list-none m-0 p-0 md:gap-4">
 						{
 							posts.map((post) => (
-								<li class=" first:max-w-full first:col-start-1 first:col-end-4 w-full first:mb-4 first:text-center md:text-center md:first:mb-0">
+								<li class=" first:max-w-full md:first:col-start-1 md:first:col-end-3 lg:first:col-start-1 lg:first:col-end-4 w-full first:mb-4 text-center md:first:text-center md:first:mb-0">
 									<a class=" block" href={`/blog/${post.slug}/`}>
 
 										<img class=" w-full h-72 mb-2 rounded-xl grayscale hover:grayscale-0" src={post.data.heroImage} alt="" />
-										<h3 class=" m-0 text-black md:first:text-2xl">{post.data.title}</h3>
-										<p class=" m-0 text-black">
-											<FormattedDate date={post.data.pubDate} />
-										</p>
-										<p class=" m-0 text-black text-sm px-6 leading-4">{post.data.description}</p>
+										<h3 class=" m-0 text-black first:text-2xl text-sm font-bold px-12">{post.data.title}</h3>
+										<p class=" m-0 text-black text-xs"><FormattedDate date={post.data.pubDate} /></p>
 
 									</a>
 								</li>
