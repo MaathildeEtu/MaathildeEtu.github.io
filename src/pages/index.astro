@@ -18,7 +18,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			<TopNav />
 			<Header />
 			
-			<main class=" grow">
+			<main class=" grow pb-10">
 				
 				<!-- Tag -->
 				<section class=" m-4 sm:m-0">
@@ -66,14 +66,27 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 					<div class=" flex justify-center h-60"><img src="/img-illustration-mathilde-decoux-portfolio.png" alt=""></div>
 				</div>
 
+				<!-- Data -->
+				<section class=" m-4 sm:m-0 bg-moutarde-light md:my-10 py-10">
+					<div class="container">
+						<h2 class=" text-white">En quelques chiffres</h2>
+						<ul class=" flex flex-row gap-2">
+							<li class=" text-center">5 ans d’experience en communication digitale</li>
+							<li class=" text-center">2 ans d’experience en design graphique</li>
+							<li class=" text-center">1 licence en BUT MMI</li>
+						</ul>
+					</div>
+				</section>
+
 				<!-- Galerie -->
 				<section class=" m-4 sm:m-0">
 					<div class="container">
-						<div>
-							<div><img src="" alt=""></div>
-							<div><img src="" alt=""></div>
-							<div><img src="" alt=""></div>
-							<div><img src="" alt=""></div>
+						<div class="grid grid-cols-2 md:grid-cols-3 md:grid-rows-3 gap-2">
+							<div class=" h-20 md:h-40 md:col-span-2"><img class=" rounded-lg h-full w-full grayscale hover:grayscale-0" src="/blog-placeholder-2.jpg" alt=""></div>
+							<div class=" row-span-2 md:row-span-2 md:col-start-3"><img class=" rounded-lg h-full w-full grayscale hover:grayscale-0" src="/blog-placeholder-2.jpg" alt=""></div>
+							<div class=" row-span-2 row-start-2 md:row-span-2 md:row-start-2"><img class=" rounded-lg h-full w-full grayscale hover:grayscale-0" src="/blog-placeholder-2.jpg" alt=""></div>
+							<div class=" h-20 col-start-2 row-start-3 md:h-40 md:row-start-2"><img class=" rounded-lg h-full w-full grayscale hover:grayscale-0" src="/blog-placeholder-2.jpg" alt=""></div>
+							<div class=" h-20 col-span-2 row-start-4 md:h-40 md:col-span-2 md:col-start-2 md:row-start-3"><img class=" rounded-lg h-full w-full grayscale hover:grayscale-0" src="/blog-placeholder-2.jpg" alt=""></div>
 						</div>
 					</div>
 				</section>
