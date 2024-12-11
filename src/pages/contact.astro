@@ -57,14 +57,18 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_CONTACT } from '../consts';
 
 		</header>
 		<form id="contact-form">
-			<!-- To simplify the tutorial, the value is static. -->
+			<!-- Champ caché pour éviter les soumissions automatisées -->
 			<input type="hidden" name="contact_number" value="697483">
-			<label>Name</label>
-			<input type="text" name="user_name">
-			<label>Email</label>
-			<input type="email" name="user_email">
-			<label>Message</label>
-			<textarea name="message"></textarea>
+			
+			<label for="user_name">Name</label>
+			<input type="text" name="user_name" id="user_name" required>
+			
+			<label for="user_email">Email</label>
+			<input type="email" name="user_email" id="user_email" required>
+			
+			<label for="message">Message</label>
+			<textarea name="message" id="message" required></textarea>
+			
 			<input type="submit" value="Send">
 		</form>
 
