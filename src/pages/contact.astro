@@ -6,68 +6,68 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION, SITE_CONTACT } from '../consts';
 ---
 
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+		<script type="text/javascript">
+			(function() {
+				// https://dashboard.emailjs.com/admin/account
+				emailjs.init({
+				publicKey: "puj01nEzScO1cFcSE",
+				});
+			})();
+		</script>
+		<script type="text/javascript">
+			window.onload = function() {
+				document.getElementById('contact-form').addEventListener('submit', function(event) {
+					event.preventDefault();
+					// these IDs from the previous steps
+					emailjs.sendForm('contact_service', 'contact_form', this)
+						.then(() => {
+							console.log('SUCCESS!');
+						}, (error) => {
+							console.log('FAILED...', error);
+						});
+				});
+			}
+		</script>
 	</head>
 	<body>
+		<TopNav />
 
-		<div class="flex flex-col min-h-dvh">
-
-			<TopNav />
-
-			<!-- Head -->
-			<header class=" bg-gradient-head-green-light bg-center bg-cover">
-				
-				<Navigation />
-
-				<!-- Container -->
-				<div class="container">
-
-					<!-- Head - Content -->
-					<div class=" relative flex flex-col pt-16 pb-16">
-
-						<div class=" z-10 flex flex-row justify-center pt-4 pb-4">
-							<h2 class=" text-center uppercase text-6xl xl:text-7xl font-bold ">{SITE_CONTACT}</h2>
-						</div>
-
-					</div>
-				</div>
-
-			</header>
+		<!-- Head -->
+		<header class=" bg-gradient-head-green-light bg-center bg-cover">
 			
-			<main class="container pb-20 grow">
-				
-				<div>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-						labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-						viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-						adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-						et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-						vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-						sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-					</p>
-				
-					<p>
-						Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-						tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-						blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-						porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-						massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-						Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-						bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-						massa massa ultricies mi.
-					</p>
+			<Navigation />
+
+			<!-- Container -->
+			<div class="container">
+
+				<!-- Head - Content -->
+				<div class=" relative flex flex-col pt-16 pb-16">
+
+					<div class=" z-10 flex flex-row justify-center pt-4 pb-4">
+						<h2 class=" text-center uppercase text-6xl xl:text-7xl font-bold ">{SITE_CONTACT}</h2>
+					</div>
+
 				</div>
+			</div>
 
-			</main>
+		</header>
+		<form id="contact-form">
+			<!-- To simplify the tutorial, the value is static. -->
+			<input type="hidden" name="contact_number" value="697483">
+			<label>Name</label>
+			<input type="text" name="user_name">
+			<label>Email</label>
+			<input type="email" name="user_email">
+			<label>Message</label>
+			<textarea name="message"></textarea>
+			<input type="submit" value="Send">
+		</form>
 
-			<Footer />
-
-		</div>
-
+		<Footer />
 	</body>
-
-</html>
+	</html>
