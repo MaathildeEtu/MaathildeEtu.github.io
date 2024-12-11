@@ -37,44 +37,47 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_ABOUT } from '../consts';
 
 			</header>
 			
-			<main class="container pb-20 grow">
+			<main class="pb-20 grow flex flex-col gap-10 md:gap-20">
 				
 				<!-- About Me -->
-				<div class=" relative pb-5 container">
+				<section class=" m-4 sm:m-0 relative">
+					<div class="container">
+						<div class=" absolute invisible lg:visible h-16 z-10 top-32 right-4"><img class=" object-cover h-full drop-shadow-xl" src="/element/element-blue-pointilletlarge.png" alt=""></div>
+						<div class=" absolute h-6 z-10 -bottom-3 left-48"><img class=" object-cover h-full drop-shadow-xl" src="/element/element-yellowdark-cross.png" alt=""></div>
+						<div class=" absolute h-6 z-10 -bottom-3 left-60"><img class=" object-cover h-full drop-shadow-xl" src="/element/element-yellowdark-cross.png" alt=""></div>
 
-					<div class=" absolute invisible lg:visible h-16 z-10 top-32 right-4"><img class=" object-cover h-full drop-shadow-xl" src="/element/element-blue-pointilletlarge.png" alt=""></div>
-					<div class=" absolute h-6 z-10 bottom-2 left-16"><img class=" object-cover h-full drop-shadow-xl" src="/element/element-yellowdark-cross.png" alt=""></div>
-					<div class=" absolute h-6 z-10 bottom-2 left-28"><img class=" object-cover h-full drop-shadow-xl" src="/element/element-yellowdark-cross.png" alt=""></div>
-
-					<div class=" relative grid lg:grid-cols-3 p-10 rounded-2xl bg-[#007368]">
-						<div class=" col-span-2 flex flex-col gap-2">
-							<h3 class=" text-white text-2xl">About Me</h3>
-							<p class=" text-white text-sm">Passionnée par la communication et le design, j'ai acquis des compétences variées dans la création de contenus, la gestion de projets et le développement web. Polyvalente et créative, je m'investis dans des projets qui allient innovation et impact, en apportant des solutions adaptées aux besoins de chaque client. Mon objectif est de valoriser chaque projet grâce à une stratégie de communication efficace et des visuels percutants.</p>
-							<div class=" flex justify-end"><a class=" py-1 px-4 rounded-lg text-[#007368] bg-white text-md" href="/about">About Me</a></div>
-						</div>
-						<div class=" absolute invisible lg:visible bottom-8 right-14 h-72 xl:h-80">
-							<img class=" object-cover h-full drop-shadow-xl" src="/img-profil-mathilde-decoux-portfolio.png" alt="">
+						<div class=" relative grid lg:grid-cols-3 p-10 md:mx-16 rounded-2xl bg-[#007368]">
+							<div class=" col-span-2 flex flex-col gap-2">
+								<h3><span class="font-ephesis text-white text-5xl ">About Me</span></h3>
+								<p class=" text-white text-sm">Passionnée par la communication et le design, j'ai acquis des compétences variées dans la création de contenus, la gestion de projets et le développement web. Polyvalente et créative, je m'investis dans des projets qui allient innovation et impact, en apportant des solutions adaptées aux besoins de chaque client. Mon objectif est de valoriser chaque projet grâce à une stratégie de communication efficace et des visuels percutants.</p>
+								<div class=" flex justify-end"><a class=" py-1 px-4 rounded-lg text-[#007368] bg-white text-md" href="/about">About Me</a></div>
+							</div>
+							<div class=" absolute invisible lg:visible bottom-8 right-14 h-72 xl:h-80">
+								<img class=" object-cover h-full drop-shadow-xl" src="/img-profil-mathilde-decoux-portfolio.png" alt="">
+							</div>
 						</div>
 					</div>
-				</div>
+				</section>
 
-				<!-- Illustration -->
-				<!-- <div class=" pt-5 pb-10 container">
-					<div class=" flex justify-center h-60"><img src="/img-illustration-mathilde-decoux-portfolio.png" alt=""></div>
-				</div> -->
+				<!-- Telechargement -->
+				<section class="m-4 sm:m-0">
+					<div class=" container flex justify-center">
+						<a class="rounded-md border-[1px] border-solid border-black px-4 py-1 hover:bg-yellow-light hover:text-white hover:border-yellow-light" href="DECOUXMathilde_CV.pdf" download="DECOUXMathilde_CV.pdf">Télécharger mon CV</a>
+					</div>
+				</section>
 
 				<!-- CV -->
-				<section class=" m-4 sm:m-0 pt-24">
-					<div class=" container flex flex-col gap-12">
+				<section class=" m-4 sm:m-0 ">
+					<div class=" container flex flex-col gap-6 lg:gap-12">
 
 						<h2 class=" text-center text-5xl uppercase font-bold">Un Aperçu de <span class="font-ephesis text-green-dark-800 normal-case text-6xl ">Mon Chemin</span></h2>
 
-						<div class=" relative flex flex-row items-center gap-8 px-24 ">
+						<div class=" relative flex flex-col lg:flex-row items-center gap-4 lg:gap-8 lg:px-24 ">
 
 							<div class=" absolute invisible lg:visible h-16 z-10 top-52 right-[560px]"><img class=" object-cover h-full drop-shadow-xl" src="/element/element-yellowdark-pointilletlarge.png" alt=""></div>
 							<div class=" absolute h-6 z-10 -bottom-3 right-36"><img class=" object-cover h-full drop-shadow-xl" src="/element/element-blue-cross.png" alt=""></div>
 
-							<div class="w-1/2 flex flex-row flex-wrap gap-x-16 gap-y-8">
+							<div class="lg:w-1/2 flex flex-row flex-wrap gap-4 lg:gap-x-16 lg:gap-y-8 lg:pl-4">
 
 								<div class=" flex flex-col gap-1">
 									<h3>Mes <span class="font-ephesis text-green-dark-800 text-5xl ">centres d'intérêts</span></h3>
@@ -108,20 +111,20 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_ABOUT } from '../consts';
 								</div>
 							</div>
 
-							<div class="w-1/2 rounded-lg overflow-hidden grayscale">
+							<div class="lg:w-1/2 rounded-lg overflow-hidden grayscale">
 								<img src="https://images.pexels.com/photos/7241413/pexels-photo-7241413.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load" alt="">
 							</div>
 							
 						</div>
 
-						<div class=" relative flex flex-row items-center gap-8 px-24 ">
+						<div class=" relative flex flex-col-reverse lg:flex-row items-center gap-4 lg:gap-8 lg:px-24 ">
 
-							<div class="w-1/2 rounded-lg overflow-hidden grayscale">
+							<div class="lg:w-1/2 rounded-lg overflow-hidden grayscale">
 								<img src="https://images.pexels.com/photos/4065895/pexels-photo-4065895.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load" alt="">
 							</div>
 
-							<div class="w-1/2 flex flex-col gap-4">
-								<h3>Mes <span class="font-ephesis text-green-dark-800 text-5xl ">expérience</span></h3>
+							<div class="lg:w-1/2 flex flex-col gap-4 lg:pr-4">
+								<h3 class=" text-center lg:text-left">Mes <span class="font-ephesis text-green-dark-800 text-5xl ">expérience</span></h3>
 								
 								<div>
 									<h4>Responsable Communication (mission bénévole)</h4>
@@ -179,10 +182,10 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_ABOUT } from '../consts';
 
 						</div>
 
-						<div class=" relative flex flex-col items-center gap-8 px-12 ">
+						<div class=" relative flex flex-col items-center gap-8 lg:px-12 ">
 							<h3>Mes <span class="font-ephesis text-green-dark-800 text-5xl ">compétences</span></h3>
 
-							<div class=" flex flex-row justify-between gap-8">
+							<div class=" flex flex-col md:flex-row justify-center md:flex-wrap gap-4 md:gap-8 w-full">
 
 								<div class=" w-max">
 									<h4>Communication</h4>
@@ -190,7 +193,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_ABOUT } from '../consts';
 										<li><p>• Gestion de prolet</p></li>
 										<li><p>• Communication Interne et externe</p></li>
 										<li><p>• Audit numérique</p></li>
-										<li><p>• Réseaux sociaux (Facebook, Instagram, Tiktok)</p></li>
+										<li><p>• Réseaux sociaux (FB, Inta, Tiktok)</p></li>
 										<li><p>• Création et gestion de sites web</p></li>
 									</ul>
 								</div>
@@ -234,6 +237,11 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_ABOUT } from '../consts';
 						
 					</div>
 				</section>
+
+				<!-- Illustration -->
+				<div class=" pt-5 pb-10 container">
+					<div class=" flex justify-center h-60"><img src="/img-illustration-mathilde-decoux-portfolio.png" alt=""></div>
+				</div>
 
 			</main>
 
