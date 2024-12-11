@@ -26,7 +26,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_CONTACT } from '../consts';
 				document.getElementById('contact-form').addEventListener('submit', function(event) {
 					event.preventDefault();
 					// these IDs from the previous steps
-					emailjs.sendForm('service_id', 'template_id', form, 'user_id').then(function(response) {
+					emailjs.sendForm(service_id, template_id, form_element, user_id).then(function(response) {
 						console.log('Success', response);
 						}, function(error) {
 						console.log('Failed', error);
@@ -58,16 +58,11 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_CONTACT } from '../consts';
 
 		</header>
 		<form id="contact-form">
-			<!-- To simplify the tutorial, the value is static. -->
-			<input type="hidden" name="contact_number" value="697483">
-			<label>Name</label>
-			<input type="text" name="user_name">
-			<label>Email</label>
-			<input type="email" name="user_email">
-			<label>Message</label>
-			<textarea name="message"></textarea>
-			<input type="submit" value="Send">
-		</form>
+			<input type="text" name="user_name" placeholder="Your Name" required>
+			<input type="email" name="user_email" placeholder="Your Email" required>
+			<textarea name="message" placeholder="Your Message" required></textarea>
+			<button type="submit">Send</button>
+		</form>  
 
 		<Footer />
 	</body>
