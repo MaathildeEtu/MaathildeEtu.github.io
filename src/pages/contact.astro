@@ -18,7 +18,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_CONTACT } from '../consts';
 
 			gtag('config', 'GTM-P3R88NLC');
 		</script>
-		
+
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 		<script type="text/javascript">
@@ -29,20 +29,52 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_CONTACT } from '../consts';
 				});
 			})();
 		</script>
+
 		<script type="text/javascript">
-			window.onload = function() {
-				document.getElementById('contact-form').addEventListener('submit', function(event) {
+			window.onload = function () {
+				document.getElementById('contact-form').addEventListener('submit', function (event) {
 					event.preventDefault();
-					// these IDs from the previous steps
+
+					// IDs du service, modèle, et formulaire
 					emailjs.sendForm('service_ytzynnj', 'template_uubjaxu', this)
 						.then(() => {
-							console.log('SUCCESS!');
+							// Affiche un message de succès
+							const successMessage = document.createElement('div');
+							successMessage.textContent = 'Votre message a bien été envoyé !';
+							successMessage.className = 'mt-4 p-3 bg-green-200 text-green-800 font-semibold rounded';
+
+							// Ajoute le message sous le formulaire
+							const formContainer = document.getElementById('contact-form');
+							formContainer.appendChild(successMessage);
+
+							// Réinitialise le formulaire
+							formContainer.reset();
+
+							// Supprime le message après 5 secondes
+							setTimeout(() => {
+								successMessage.remove();
+							}, 5000);
 						}, (error) => {
-							console.log('FAILED...', error);
-						});
+							// Affiche un message d'erreur
+							console.error('FAILED...', error);
+							const errorMessage = document.createElement('div');
+							errorMessage.textContent = 'Une erreur est survenue. Veuillez réessayer.';
+							errorMessage.className = 'mt-4 p-3 bg-red-200 text-red-800 font-semibold rounded';
+
+							// Ajoute le message sous le formulaire
+							const formContainer = document.getElementById('contact-form');
+							formContainer.appendChild(errorMessage);
+
+							// Supprime le message après 5 secondes
+							setTimeout(() => {
+								errorMessage.remove();
+						}, 5000);
+					});
 				});
 			}
 		</script>
+
+
 	</head>
 	<body>
 		<TopNav />
@@ -100,6 +132,19 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_CONTACT } from '../consts';
 								placeholder="Votre Mail"
 							>
 						</div>
+
+						<!-- Email -->
+						<div class="mb-4">
+							<label for="user_phone" class="block text-lg font-semibold text-gray-700">Téléphone</label>
+							<input 
+								type="phone" 
+								name="user_phone" 
+								id="user_phone" 
+								required 
+								class="w-full p-3 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+								placeholder="Votre numéro de Téléphone"
+							>
+						</div>
 						
 						<!-- Message -->
 						<div class="mb-4">
@@ -118,7 +163,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_CONTACT } from '../consts';
 						<div class="mt-6">
 							<input 
 								type="submit" 
-								value="Send" 
+								value="Envoyer" 
 								class="w-full p-3 bg-green-light-800 text-white font-semibold rounded-lg hover:bg-yellow-light transition-colors"
 							>
 						</div>
