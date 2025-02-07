@@ -30,6 +30,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_CONTACT } from '../consts';
 			})();
 		</script>
 
+		<!-- Confirmation envoie Message -->
 		<script type="text/javascript">
 			window.onload = function () {
 				document.getElementById('contact-form').addEventListener('submit', function (event) {
@@ -41,7 +42,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_CONTACT } from '../consts';
 							// Affiche un message de succès
 							const successMessage = document.createElement('div');
 							successMessage.textContent = 'Votre message a bien été envoyé !';
-							successMessage.className = 'mt-4 p-3 bg-green-200 text-green-800 font-semibold rounded';
+							successMessage.className = 'mt-4 p-3 bg-green-dark text-white font-semibold rounded-lg';
 
 							// Ajoute le message sous le formulaire
 							const formContainer = document.getElementById('contact-form');
@@ -124,9 +125,9 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_CONTACT } from '../consts';
 
 		<section>
 			<div class="container">
-				<div class=" pb-20 md:px-4 lg:px-12 flex flex-col md:flex-row gap-4">
+				<div class=" pb-16 md:px-4 lg:px-12 flex flex-col gap-4 xl:flex-row">
 
-					<div class=" md:w-1/2 flex flex-col gap-4">
+					<div class=" xl:w-1/2 flex flex-col gap-4">
 						<div class=" p-10 flex flex-col gap-4 w-full bg-white rounded-2xl shadow-md ">
 							<h2 class=" text-green-base">Coordonnées</h2>
 							<ul class=" pl-4">
@@ -136,17 +137,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_CONTACT } from '../consts';
 							</ul>
 						</div>
 
-						<div class=" p-10 flex flex-col gap-4 w-full bg-white rounded-2xl shadow-md">
-							<h2 class=" text-green-base">Me Suivre</h2>
-							
-							<ul class=" flex flex-row gap-6 justify-center">
-								<a href=""><li class=" flex flex-row gap-2 items-center"><img class=" w-8" src="/icon-instagram-portfolio-jaune.png" alt="Icon téléphone">instagram</li></a>
-								<a href=""><li class=" flex flex-row gap-2 items-center"><img class=" w-8" src="/icon-facebook-portfolio-jaune.png" alt="Icon mail">facebook</li></a>
-								<a href=""><li class=" flex flex-row gap-2 items-center"><img class=" w-8" src="/icon-linkedin-portfolio-jaune.png" alt="Icon lieux">linkedin</li></a>
-							</ul>
-						</div>
-
-						<div class="relative w-full h-full flex justify-center items-center bg-white rounded-2xl shadow-md overflow-hidden">
+						<div class="relative h-[500px] xl:w-full xl:h-full flex justify-center items-center bg-white rounded-2xl shadow-md overflow-hidden">
 							<img class="slideshow-image absolute opacity-0 h-full w-full object-cover object-center transition-opacity duration-1000 ease-in-out" 
 								src="/img-championnats-de-france-depart-mathilde-decoux-portfolio.jpg" 
 								alt="Départ Course au Championnat de France Sauvetage Sportif Short Course à Châteauroux en décembre 2024">
@@ -165,7 +156,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_CONTACT } from '../consts';
 						</div>
 					</div>
 
-					<div class=" relative p-10 flex flex-col md:w-1/2 gap-4 bg-white rounded-2xl shadow-md ">
+					<div class=" relative p-10 flex flex-col xl:w-1/2 gap-4 bg-white rounded-2xl shadow-md ">
 
 						<h2 class=" text-green-base">Me contacter</h2>
 
@@ -234,7 +225,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_CONTACT } from '../consts';
 								<input 
 									type="submit" 
 									value="Envoyer" 
-									class="flex float-end px-6 py-3 bg-green-base text-white font-semibold rounded-lg hover:bg-yellow-light transition-colors"
+									class="flex float-end px-6 py-3 bg-green-base text-white font-semibold rounded-lg hover:bg-yellow-light transition-colors hover:bg-green-dark"
 								>
 							</div>
 
@@ -245,6 +236,18 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_CONTACT } from '../consts';
 
 					</div>
 				
+				</div>
+
+				<div class=" pb-16 md:px-4 lg:px-12 flex flex-col gap-4 xl:flex-row">
+					<div class=" p-10 flex flex-col gap-4 items-center w-full bg-white rounded-2xl shadow-md ">
+						<h2 class=" text-green-base">Me Suivre</h2>
+						
+						<ul class=" flex flex-row gap-10">
+							<a href=""><li class=" flex flex-row gap-2 items-center"><img class=" w-8" src="/icon-instagram-portfolio-jaune.png" alt="Icon téléphone">@lestudiodemathilde</li></a>
+							<a href=""><li class=" flex flex-row gap-2 items-center"><img class=" w-8" src="/icon-facebook-portfolio-jaune.png" alt="Icon mail">Le Studio de Mathilde</li></a>
+							<a href=""><li class=" flex flex-row gap-2 items-center"><img class=" w-8" src="/icon-linkedin-portfolio-jaune.png" alt="Icon lieux">Mathilde DECOUX</li></a>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</section>
