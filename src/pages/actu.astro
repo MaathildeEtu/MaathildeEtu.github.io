@@ -1,0 +1,87 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Navigation from '../components/Navigation.astro';
+import TopNav from '../components/Top-nav.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_ACTU } from '../consts';
+---
+
+<!doctype html>
+    <html lang="en">
+        <head>
+            <!-- Google tag (gtag.js) -->
+            <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=GTM-P3R88NLC"></script>
+            <script type="text/partytown">
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'GTM-P3R88NLC');
+            </script>
+            
+            <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+        </head>
+        <body class=" bg-white-light">
+            <!-- Google Tag Manager (noscript) -->
+            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLBJN7XG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+            <!-- End Google Tag Manager (noscript) -->
+
+            <TopNav />
+
+            <!-- Head -->
+            <header class=" bg-gradient-head bg-center bg-cover">
+                    
+                <Navigation />
+
+                <!-- Container -->
+                <div class="container">
+
+                    <!-- Head - Content -->
+                    <div class=" relative flex flex-col pt-16 pb-16">
+
+                        <div class=" z-10 flex flex-row justify-center pt-4 pb-4">
+                            <h1 class=" text-center uppercase text-6xl xl:text-7xl font-bold ">{SITE_ACTU}</h1>
+                        </div>
+
+                    </div>
+                </div>
+
+            </header>
+
+            <section>
+                <div class="container">
+                    <ul>
+                        <a href=""></a><li class="">
+                            <div>
+                                <img class=" w-full h-72 mb-2 rounded-xl grayscale hover:grayscale-0" src= alt="" />
+                            </div>
+
+                            <div>
+                                <h2 class=" m-0 text-black first:text-2xl text-sm font-bold">Championnats de France Short Course - 2024</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente error officiis iure voluptates iste voluptas distinctio quod beatae, reiciendis doloribus consequuntur earum odit id aliquid eveniet ducimus laborum dolor nisi?</p>
+                                <a href=""><button>Projet</button></a>
+                            </div>
+                        </li></a>
+
+
+                    </ul>
+
+
+                    <ul class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 gap-y-6 list-none m-0 p-0 md:gap-4">
+
+                        <li class="text-center">
+                            <a class=" block" href="">
+                                
+                                <h3 class=" m-0 text-black first:text-2xl text-sm font-bold px-12"></h3>
+                            </a>
+                        </li>
+
+					</ul>
+                </div>
+            </section>
+
+            <Footer />
+
+        </body>
+
+    </html>

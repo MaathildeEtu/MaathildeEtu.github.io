@@ -22,3 +22,8 @@ livrables : [
   { title: 'Formaulaire et site web', description: 'Mise à jour et Création, faciliter les insciptions sur les différents pôles.' },
 ]
 ---
+
+
+<p>Accès au photo de l'évènement : </p>
+<a href="https://photos.app.goo.gl/po5LzduzzKdLTWWw6">21 décembre - Jour 1</a>
+<a href="https://photos.app.goo.gl/zunovRRoMsCVkp6J9">22 décembre - Jour 2</a>

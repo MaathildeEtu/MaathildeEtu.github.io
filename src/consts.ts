@@ -7,3 +7,4 @@ export const SITE_URL = 'https://maathildeetu.github.io';
 export const SITE_CONTACT = 'Contact';
 export const SITE_BLOG = 'My Blog';
 export const SITE_ABOUT = 'About Me';
+export const SITE_ACTU = 'Actualité';
