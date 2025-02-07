@@ -3,7 +3,7 @@ title: 'Championnats de France Sauvetage Sportif Short Course'
 description: 'Les Championnats de France de Sauvetage Sportif Short Course reviennent les 21 et 22 décembre 2024 au centre aquatique Balsan’éo à Châteauroux pour une deuxième année consécutive. Plus de 300 compétiteurs, 60 officiels, 80 bénévoles organisateurs, et 150 membres du staff des équipes seront réunis pour cet événement exceptionnel. Venez découvrir 5 épreuves spectaculaires avec les meilleurs sauveteurs de France !'
 pubDate: 'Dec 17 2023'
 heroImage: '/blog-placeholder-2.jpg'
-tags: ['graphisme', 'reseaux sociaux', 'gestion de projet', 'personnelle']
+tags: ['Graphisme', 'Reseaux sociaux', 'Gestion de projet', 'Photographie']
 clients: 'la Fédération Française de Sauvetage et de Secourisme'
 contexte: "La deuxième édition des Championnats de France de Sauvetage Sportif Short Course s’est tenue les 21 et 22 décembre 2024 au centre aquatique Balsan’éo, à Châteauroux. Cet événement majeur, organisé en collaboration avec la Fédération Française de Sauvetage et de Secourisme (FFSS), a rassemblé plus de 300 compétiteurs, 60 officiels, 80 bénévoles, et 150 membres du staff des équipes. Pour la deuxième année consécutive, j’ai réalisé ce projet bénévolement dans le cadre de mon engagement au sein de mon association locale, l'Association des Sauveteurs Secouristes de Châteauuroux.
 L’objectif était de concevoir des visuels de communication attractifs et professionnels qui reflétaient l’identité de l’événement. Ces supports ont valorisé l’esprit compétitif, sportif et convivial des Championnats, tout en répondant aux besoins des différentes cibles : compétiteurs, officiels, bénévoles, spectateurs et médias."
