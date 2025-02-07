@@ -9,13 +9,49 @@
     <div class="container">
 
         <!-- Nav - Content -->
-        <div class=" flex flex-col md:flex-row items-center justify-between gap-4 py-4 px-6 bg-white shadow-md rounded-t-3xl rounded-bl-3xl">
-            <a href="/"><img class=" h-12" src="/favicon.svg" alt=""></a>
+        <div class=" flex flex-col md:flex-row items-center justify-between gap-4 py-4 px-6">
+            <!-- <a href="/"><img class=" h-12" src="/favicon.svg" alt=""></a> -->
 
             <ul class=" flex flex-row gap-4">
-                <li class=" py-1 px-3 text-black rounded-lg hover:bg-[#D9A324] hover:text-white"><a href="/blog">Blog</a></li>
-                <li class=" py-1 px-3 text-black rounded-lg hover:bg-[#D9A324] hover:text-white"><a href="/about">About Me</a></li>
-                <li class=" py-1 px-3 rounded-lg bg-[#007368] hover:bg-[#006057] text-white"><a href="/contact">Contact</a></li>
+                <li class=" relative py-1 px-4 text-black">
+                    <a class=" 
+                        hover:before:content 
+                        hover:before:absolute 
+                        hover:before:w-1/2 
+                        hover:before:h-[14px] 
+                        hover:before:right-[5px] 
+                        hover:before:bottom-[8px] 
+                        hover:before:bg-yellow-base
+                        hover:before:-z-10
+                        hover:before:animate-pulse
+                    " href="/blog">Mes Projets</a>
+                </li>
+                <li class=" relative py-1 px-4 text-black">
+                    <a class=" 
+                        hover:before:content 
+                        hover:before:absolute 
+                        hover:before:w-1/2 
+                        hover:before:h-[14px] 
+                        hover:before:right-[5px] 
+                        hover:before:bottom-[8px] 
+                        hover:before:bg-yellow-base 
+                        hover:before:-z-10
+                        hover:before:animate-pulse
+                    " href="/about">À Propos</a>
+                </li>
+                <li class=" relative py-1 px-4 text-black">
+                    <a class=" 
+                        hover:before:content 
+                        hover:before:absolute 
+                        hover:before:w-1/2 
+                        hover:before:h-[14px] 
+                        hover:before:right-[5px] 
+                        hover:before:bottom-[8px] 
+                        hover:before:bg-yellow-base
+                        hover:before:-z-10
+                        hover:before:animate-pulse
+                    " href="/contact">Contact</a>
+                </li>
             </ul>
             
         </div>
