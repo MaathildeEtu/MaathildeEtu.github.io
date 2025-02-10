@@ -3,6 +3,7 @@ import BaseHead from '../../components/BaseHead.astro';
 import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
 import SocialMedia from '../../components/SocialMedia.astro';
+import FilAriane from '../../components/FilAriane.astro'
 import FormattedDate from '../../components/FormattedDate.astro';
 import { SITE_TITLE, SITE_DESCRIPTION, SITE_BLOG } from '../../consts';
 import { getCollection } from 'astro:content';
@@ -13,6 +14,7 @@ const posts = (await getCollection('blog')).sort(
 );
 
 const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
+
 ---
 
 <!doctype html>
@@ -79,6 +81,8 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 							<h2 class=" text-center uppercase text-6xl xl:text-7xl font-bold ">{SITE_BLOG}</h2>
 						</div>
 
+						<FilAriane />
+
 					</div>
 				</div>
 
@@ -110,25 +114,28 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 						</div>
 	
 						<!-- Card -->
-						<ul class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 gap-y-6 list-none m-0 p-0 md:gap-4">
-							{posts.map((post) => (
-								<li class=" first:max-w-full md:first:col-start-1 md:first:col-end-3 lg:first:col-start-1 lg:first:col-end-4 w-full first:mb-4 text-center md:first:text-center md:first:mb-0">
-									<a class=" block" href={`/blog/${post.slug}/`}>
-
-										<img class=" w-full h-72 mb-2 rounded-xl grayscale hover:grayscale-0" src={post.data.heroImage} alt="" />
-
-										<h3 class=" m-0 text-green-base text-lg first:text-xl font-bold px-12 rounded-xl">{post.data.title}</h3>
-										<p class=" m-0 text-black text-xs"><FormattedDate date={post.data.pubDate} /></p>
+						<ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 gap-y-6 list-none m-0 p-0 md:gap-4">
+							{posts.map((post) => (<li class="first:max-w-full md:first:col-start-1 md:first:col-end-3 lg:first:col-start-1 lg:first:col-end-4 w-full first:mb-4 text-center md:first:text-center md:first:mb-0 group">
+								<a class="block relative overflow-hidden " href={`/blog/${post.slug}/`}>
+						
+									<img class="w-full h-80 mb-2 rounded-xl grayscale transition-all duration-500" 
+										src={post.data.heroImage} alt="" />
+							
+									<div class="p-4 md:absolute md:inset-0 md:flex md:flex-col md:justify-center md:items-center md:bg-black md:bg-opacity-50 md:opacity-0 md:transition-opacity md:duration-500 md:group-hover:opacity-100 md:h-80 md:rounded-xl">
+										<h3 class="m-0 text-green-base md:text-white text-lg first:text-xl font-bold px-12 rounded-xl">{post.data.title}</h3>
+										<p class="m-0 text-xs text-black md:text-white opacity-80"><FormattedDate date={post.data.pubDate} /></p>
 										
 										<ul class="flex flex-wrap justify-center gap-2 mt-2">
 											{post.data.tags.map((tag, index) => (
-												<li key={index} class="text-xs bg-green-light text-white px-2 py-1 rounded-md">{tag}</li>
+												<li key={index} class="text-xs bg-green-base text-white px-2 py-1 rounded-md">{tag}</li>
 											))}
 										</ul>
 
-									</a>
-								</li>
-							))}
+									</div>
+						
+								</a>
+							
+							</li>))}
 						</ul>
 	
 					</div>

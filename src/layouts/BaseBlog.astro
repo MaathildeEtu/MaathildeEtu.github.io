@@ -2,6 +2,8 @@
 import BaseHead from '../components/BaseHead.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
+import FilAriane from '../components/FilAriane.astro'
+
 import { SITE_TITLE, SITE_DESCRIPTION, SITE_BLOG } from '../consts';
 import { getCollection } from 'astro:content';
 
@@ -10,6 +12,9 @@ const posts = (await getCollection('blog')).sort(
 );
 
 const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
+
+const path = Astro.url.pathname.split('/').filter(Boolean);
+
 ---
 
 <!doctype html>
@@ -74,6 +79,8 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 					<div class=" z-10 flex flex-row justify-center pt-4 pb-4">
 						<h2 class=" text-center uppercase text-6xl xl:text-7xl font-bold ">{SITE_BLOG}</h2>
 					</div>
+
+					<FilAriane />
 
 				</div>
 			</div>

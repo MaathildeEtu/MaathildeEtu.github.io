@@ -1,0 +1,33 @@
+---
+const path = Astro.url.pathname.split('/').filter(Boolean);
+---
+
+<!-- Fil d'ariane -->
+<div aria-label="breadcrumb" class=" flex justify-center text-sm text-gray-600 mb-4">
+    <ul class="flex items-center space-x-2">
+        <li>
+            <a href="/" class="text-blue-base font-bold hover:text-blue-dark">Accueil</a>
+        </li>
+        {path.map((segment, index) => {
+            const url = `/${path.slice(0, index + 1).join('/')}/`;
+            const isLast = index === path.length - 1;
+    
+            return (
+            <>
+                <li>/</li>
+                <li>
+                {!isLast ? (
+                    <a href={url} class="text-blue-base hover:text-blue-dark capitalize">
+                    {decodeURIComponent(segment)}
+                    </a>
+                ) : (
+                    <span class="text-gray-400 capitalize">
+                    {decodeURIComponent(segment)}
+                    </span>
+                )}
+                </li>
+            </>
+            );
+        })}
+    </ul>
+</div>

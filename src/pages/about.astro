@@ -1,6 +1,7 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
 import Navigation from '../components/Navigation.astro';
+import FilAriane from '../components/FilAriane.astro'
 import Footer from '../components/Footer.astro';
 import SocialMedia from '../components/SocialMedia.astro';
 import { SITE_TITLE, SITE_DESCRIPTION, SITE_ABOUT } from '../consts';
@@ -40,8 +41,10 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_ABOUT } from '../consts';
 					<div class=" relative flex flex-col pt-16 pb-16">
 
 						<div class=" z-10 flex flex-row justify-center pt-2 pb-2">
-							<h1 class=" text-center uppercase text-6xl xl:text-7xl font-bold ">{SITE_ABOUT}</h1>
+							<h2 class=" text-center uppercase text-6xl xl:text-7xl font-bold ">{SITE_ABOUT}</h2>
 						</div>
+
+						<FilAriane />
 
 					</div>
 				</div>
