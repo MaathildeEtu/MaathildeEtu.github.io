@@ -33,24 +33,18 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 		<!-- Filtre Catégorie -->
 		<script>
 			document.addEventListener("DOMContentLoaded", () => {
-			const button = document.getElementById("filter-button");
-			const menu = document.getElementById("filter-menu");
-		
-			if (button) {
-				button.addEventListener("click", () => { 
-					if (menu) menu.classList.toggle("hidden");
+				const button = document.getElementById("filter-button");
+				const menu = document.getElementById("filter-menu");
+			
+				button.addEventListener("click", () => {
+					menu.classList.toggle("hidden");
 				});
-			}
-		
-			document.addEventListener("click", (event) => {
-				if (menu) menu.classList.add("hidden");
 
-				if (button && menu && event.target instanceof Node) {
+				document.addEventListener("click", (event) => {
 					if (!button.contains(event.target) && !menu.contains(event.target)) {
-						menu.classList.add("hidden");
+					menu.classList.add("hidden");
 					}
-				}
-			});
+				});
 			});
 		</script>
 		
