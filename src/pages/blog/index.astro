@@ -43,13 +43,13 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 					});
 			
 					document.addEventListener("click", (event) => {
-					if (event.target !== button && !menu.contains(event.target)) {
+					if (event.target !== button && !(menu.contains(event.target as Node))) {
 						// Close the menu if clicking outside
 						menu.classList.add("hidden");
 					}
 					});
 				}
-			});
+				});
 		</script>
 		
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
