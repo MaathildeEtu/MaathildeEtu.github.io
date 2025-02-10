@@ -104,10 +104,10 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 							<!-- Liste déroulante -->
 							<ul id="filter-menu" class="hidden absolute -left-[63px] mt-2 w-56 bg-white border shadow-lg rounded-lg overflow-hidden z-50">
 								<li class="py-2 px-4 border-b hover:bg-gray-100">
-									<a class="block w-full text-sm text-black" href="/blog">Toutes les catégories</a>
+									<a class="block w-full text-sm text-black font-bold" href="/blog">Toutes les catégories</a>
 								</li>
 
-								{tags.map((tag) => (<li key={tag} class="py-2 px-4 border-b hover:bg-gray-100">
+								{tags.map((tag) => (<li data-key={tag} class="py-2 px-4 border-b hover:bg-gray-100">
 									<a class="block w-full text-sm text-black" href={`/blog/${tag}/`}>
 									{tag}
 									</a>
