@@ -32,86 +32,12 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 		<!-- <TopNav /> -->
 		
 		<div class=" relative flex flex-col justify-center items-center h-screen">
-			<h1 class="text-9xl font-gliker font-bold text-blue-base uppercase">Portfolio</h1>
-            <!-- <img class="absolute top-[312px] w-[49rem]" src="./element-portfolio-ligne-mathilde-decoux.svg" alt=""> -->
-			
-			<!-- <ul class=" flex flex-row gap-4">
-                <li class=" relative py-1 px-4 text-black">
-                    <a class=" 
-                        hover:before:content 
-                        hover:before:absolute 
-                        hover:before:w-1/2 
-                        hover:before:h-[12px]
-                        hover:before:rounded-lg 
-                        hover:before:right-[5px] 
-                        hover:before:bottom-[10px] 
-                        hover:before:bg-yellow-base
-                        hover:before:-z-10
-                        hover:before:animate-pulse
-                    " href="blog/graphisme">#Graphisme</a>
-                </li>
-                <li class=" relative py-1 px-4 text-black">
-                    <a class=" 
-                        hover:before:content 
-                        hover:before:absolute 
-                        hover:before:w-1/2 
-                        hover:before:h-[12px]
-                        hover:before:rounded-lg 
-                        hover:before:left-[5px] 
-                        hover:before:top-[10px] 
-                        hover:before:bg-yellow-base 
-                        hover:before:-z-10
-                        hover:before:animate-pulse
-                    " href="blog/reseauxsociaux">#Réseaux Sociaux</a>
-                </li>
-                <li class=" relative py-1 px-4 text-black">
-                    <a class=" 
-                        hover:before:content 
-                        hover:before:absolute 
-                        hover:before:w-1/2 
-                        hover:before:h-[12px]
-                        hover:before:rounded-lg 
-                        hover:before:right-[5px] 
-                        hover:before:top-[10px] 
-                        hover:before:bg-yellow-base
-                        hover:before:-z-10
-                        hover:before:animate-pulse
-                    " href="blog/uiux">#UI/UX</a>
-                </li>
-				<li class=" relative py-1 px-4 text-black">
-                    <a class=" 
-                        hover:before:content 
-                        hover:before:absolute 
-                        hover:before:w-1/2 
-                        hover:before:h-[12px]
-                        hover:before:rounded-lg 
-                        hover:before:left-[5px] 
-                        hover:before:bottom-[10px] 
-                        hover:before:bg-yellow-base
-                        hover:before:-z-10
-                        hover:before:animate-pulse
-                    " href="blog/webdesign">#Webdesign</a>
-                </li>
-				<li class=" relative py-1 px-4 text-black">
-                    <a class=" 
-                        hover:before:content 
-                        hover:before:absolute 
-                        hover:before:w-1/2 
-                        hover:before:h-[12px]
-                        hover:before:rounded-lg 
-                        hover:before:right-[5px] 
-                        hover:before:bottom-[10px] 
-                        hover:before:bg-yellow-base
-                        hover:before:-z-10
-                        hover:before:animate-pulse" 
-                    href="blog/photographie">#Photographie</a>
-                </li>
-            </ul> -->
+			<h1 class="text-5xl md:text-9xl font-gliker font-bold text-blue-base uppercase">Portfolio</h1>
 
-            <ul class=" flex flex-row gap-4">
+            <ul class=" p-2 flex flex-row flex-wrap justify-center gap-2 md:gap-4 ">
                 {tags.map((tag) => (
-                    <li class=" relative py-1 px-4 text-black">
-                        <a class=" 
+                    <li class=" relative md:py-1 md:px-4 text-black h-5 flex">
+                        <a class=" text-sm md:text-lg
                             hover:before:content 
                             hover:before:absolute 
                             hover:before:w-1/2 
@@ -129,31 +55,31 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 
             <div class="">
                 <a href="/about">
-                    <p class=" absolute top-24 right-52 text-2xl font-gliker font-bold text-yellow-dark rounded-lg border border-solid border-transparent px-4 py-1 hover:border-yellow-dark">À propos</p>
-                    <img class=" absolute top-[148px] right-[260px] w-28" src="./element/element-portfolio-mathilde-decoux-fleche-yellow-dark-2.svg" alt="">
+                    <p class=" absolute top-[115px] right-[30px] md:top-24 md:right-52 text-2xl font-gliker font-bold text-yellow-dark rounded-lg border border-solid border-transparent px-4 py-1 hover:border-yellow-dark">À propos</p>
+                    <img class=" absolute top-[160px] right-[60px] md:top-[148px] md:right-[260px] w-16 md:w-28" src="./element/element-portfolio-mathilde-decoux-fleche-yellow-dark-2.svg" alt="">
                 </a>
-                <p class="absolute top-[270px] right-[400px] font-gliker font-bold text-3xl uppercase text-blue-base">Mathilde <span class="font-avenir">DECOUX</span></p>
+                <p class=" absolute top-[250px] right-[83px] md:top-[270px] md:right-[400px] font-gliker font-bold text-xl md:text-3xl uppercase text-blue-base">Mathilde <span class="font-avenir">DECOUX</span></p>
             </div>
 
             <div class=""><a href="/blog">
-                <p class=" absolute bottom-44 left-72 text-2xl font-gliker font-bold text-green-base rounded-lg border border-solid border-transparent px-4 py-1 hover:border-green-dark hover:bg-green-dark hover:text-white">Mes projet</p>
-                <div class="absolute w-16 bottom-[200px] left-[230px] -rotate-[42deg]">
+                <p class=" absolute bottom-[210px] left-[70px] md:bottom-44 md:left-72 text-xl md:text-2xl font-gliker font-bold text-green-base rounded-lg border border-solid border-transparent px-4 py-1 hover:border-green-dark hover:bg-green-dark hover:text-white">Mes projets</p>
+                <div class="absolute w-12 md:w-16 bottom-[230px] left-[30px] md:bottom-[200px] md:left-[230px] -rotate-[42deg]">
                     <img src="./element/element-portfolio-mathilde-decoux-fleche-green-dark-6.svg" alt="">
                 </div>
             </a></div>
 
             <div class="">
                 <a href="/contact">
-                    <p class=" absolute bottom-20 right-64 text-2xl font-gliker font-bold text-white bg-green-base rounded-lg border border-solid border-transparent px-4 py-1 hover:bg-green-dark" >Me contacter</p>
+                    <p class=" absolute bottom-[80px] right-[40px] md:bottom-20 md:right-64 text-lg md:text-2xl font-gliker font-bold text-white bg-green-base rounded-lg border border-solid border-transparent px-4 py-1 hover:bg-green-dark" >Me contacter</p>
                 </a>
-                <div class=" absolute w-28 bottom-[110px] right-[175px] rotate-[42deg]">
+                <div class=" absolute w-14 md:w-28 bottom-[115px] right-[190px] -rotate-[45deg] md:bottom-[110px] md:right-[175px] md:rotate-[42deg]">
                     <img class=" animate-bounce" src="./element/element-portfolio-mathilde-decoux-fleche-green-dark-3.svg" alt="">
                 </div>
             </div>
 
-            <div class="absolute top-[30px] left-[-160px] -rotate-12">
+            <!-- <div class="absolute top-[30px] left-[-160px] -rotate-12">
                 <p class=" bg-green-base py-2 pr-80 pl-60 text-white font-gliker font-bold text-2xl">Actuellement <span>Étudiante</span></p>
-            </div>
+            </div> -->
 
 		</div>
 	</body>

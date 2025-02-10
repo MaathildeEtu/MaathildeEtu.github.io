@@ -70,14 +70,25 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 			<main class=" m-4 sm:m-0 pb-20">
 				<section class=" container">
 					<!-- Tag -->
-					<div>
-						<ul class=" flex flex-row flex-wrap gap-1 justify-start pb-2 pr-10 md:pr-20">
-							<li class=" px-4 py-1 max-w-max rounded-lg bg-[#D9A324] hover:bg-[#B5881E] text-white text-sm">
-								<a href="/blog">All</a>
+					<div class=" pl-6 pb-2 flex flex-row items-center gap-4">
+						<p class="text-md">Filter :</p>
+						<ul class=" flex flex-row flex-wrap gap-1 justify-start items-center pb-2 pr-10 md:pr-20">
+							<li class=" px-4 pt-2 pb-1 max-w-max rounded-lg bg-yellow-base hover:bg-yellow-dark text-md">
+								<a class="text-white" href="/blog">All</a>
 							</li>
 							{tags.map((tag) => (
-								<li class=" px-4 py-1 max-w-max rounded-lg bg-[#D9A324] hover:bg-[#B5881E] text-white text-sm">
-									<a href={`/blog/${tag}/`}>{tag}</a>
+								<li class=" relative px-4 py-1 max-w-max rounded-lg text-white text-md">
+									<a class="
+										hover:before:content 
+										hover:before:absolute 
+										hover:before:w-1/2 
+										hover:before:h-[12px]
+										hover:before:rounded-lg 
+										hover:before:right-[5px] 
+										hover:before:bottom-[10px] 
+										hover:before:bg-yellow-base
+										hover:before:-z-10"
+									href={`/blog/${tag}/`}>#{tag}</a>
 								</li>))}
 						</ul>
 					</div>
@@ -92,7 +103,9 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 										<img class=" w-full h-72 mb-2 rounded-xl grayscale hover:grayscale-0" src={post.data.heroImage} alt="" />
 										<h3 class=" m-0 text-black first:text-2xl text-sm font-bold px-12">{post.data.title}</h3>
 										<p class=" m-0 text-black text-xs"><FormattedDate date={post.data.pubDate} /></p>
-
+										<ul class=" flex flex-row wrap justify-center">
+											<li class="text-xs">{post.data.tags}</li>
+										</ul>
 									</a>
 								</li>
 							))
