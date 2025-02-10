@@ -36,13 +36,19 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 			const button = document.getElementById("filter-button");
 			const menu = document.getElementById("filter-menu");
 		
-			button.addEventListener("click", () => {
-				menu.classList.toggle("hidden");
-			});
+			if (button) {
+				button.addEventListener("click", () => { 
+					if (menu) menu.classList.toggle("hidden");
+				});
+			}
 		
 			document.addEventListener("click", (event) => {
-				if (!button.contains(event.target) && !menu.contains(event.target)) {
-				menu.classList.add("hidden");
+				if (menu) menu.classList.add("hidden");
+
+				if (button && menu && event.target instanceof Node) {
+					if (!button.contains(event.target) && !menu.contains(event.target)) {
+						menu.classList.add("hidden");
+					}
 				}
 			});
 			});
@@ -104,7 +110,7 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 										<a class="block w-full text-sm text-black font-bold" href="/blog">Toutes les catégories</a>
 									</li>
 
-									{tags.map((tag) => (<li key={tag} class="py-2 px-4 border-b hover:bg-gray-100">
+									{tags.map((tag) => (<li data-key={tag} class="py-2 px-4 border-b hover:bg-gray-100">
 										<a class="block w-full text-sm text-black" href={`/blog/${tag}/`}>
 										{tag}
 										</a>
@@ -127,7 +133,8 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 										
 										<ul class="flex flex-wrap justify-center gap-2 mt-2">
 											{post.data.tags.map((tag, index) => (
-												<li key={index} class="text-xs bg-green-base text-white px-2 py-1 rounded-md">{tag}</li>
+												<li data-key={index} class="text-xs bg-green-base text-white px-2 py-1 rounded-md">{tag}</li>
+
 											))}
 										</ul>
 

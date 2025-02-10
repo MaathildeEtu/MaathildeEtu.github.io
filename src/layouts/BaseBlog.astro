@@ -13,8 +13,6 @@ const posts = (await getCollection('blog')).sort(
 
 const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 
-const path = Astro.url.pathname.split('/').filter(Boolean);
-
 ---
 
 <!doctype html>
@@ -36,13 +34,19 @@ const path = Astro.url.pathname.split('/').filter(Boolean);
 			const button = document.getElementById("filter-button");
 			const menu = document.getElementById("filter-menu");
 		
-			button.addEventListener("click", () => {
-				menu.classList.toggle("hidden");
-			});
+			if (button) {
+				button.addEventListener("click", () => { 
+					if (menu) menu.classList.toggle("hidden");
+				});
+			}
 		
 			document.addEventListener("click", (event) => {
-				if (!button.contains(event.target) && !menu.contains(event.target)) {
-				menu.classList.add("hidden");
+				if (menu) menu.classList.add("hidden");
+
+				if (button && menu && event.target instanceof Node) {
+					if (!button.contains(event.target) && !menu.contains(event.target)) {
+						menu.classList.add("hidden");
+					}
 				}
 			});
 			});
