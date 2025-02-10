@@ -1,7 +1,5 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import Navigation from '../components/Navigation.astro';
-import TopNav from '../components/Top-nav.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { getCollection } from 'astro:content';
 
@@ -29,7 +27,6 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 	</head>
 
 	<body class="h-screen bg-gray-100 bg-fond-index bg-cover">
-		<!-- <TopNav /> -->
 		
 		<div class=" relative flex flex-col justify-center items-center h-screen">
 			<h1 class="text-5xl md:text-9xl font-gliker font-bold text-blue-base uppercase">Portfolio</h1>

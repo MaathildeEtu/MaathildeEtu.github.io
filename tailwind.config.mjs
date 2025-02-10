@@ -30,7 +30,7 @@ export default {
 				'green-base':'#8fb871', // Base Green - Primary 
 				'green-dark':'#669942',
 				// Yellow
-				'yellow-light':'#ffdd97)',
+				'yellow-light':'#ffdd97',
 				'yellow-base':'#fbc75b', // Base Yellow - Secondary
 				'yellow-dark':'#feb627',
 				// Blue 

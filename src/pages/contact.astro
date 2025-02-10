@@ -1,8 +1,8 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
 import Navigation from '../components/Navigation.astro';
-import TopNav from '../components/Top-nav.astro';
 import Footer from '../components/Footer.astro';
+import SocialMedia from '../components/SocialMedia.astro';
 import { SITE_TITLE, SITE_DESCRIPTION, SITE_CONTACT } from '../consts';
 ---
 
@@ -102,7 +102,6 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_CONTACT } from '../consts';
 
 	</head>
 	<body>
-		<TopNav />
 
 		<!-- Head -->
 		<header class=" bg-gradient-head bg-center bg-cover">
@@ -115,7 +114,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_CONTACT } from '../consts';
 				<!-- Head - Content -->
 				<div class=" relative flex flex-col pt-16 pb-16">
 
-					<div class=" z-10 flex flex-row justify-center pt-4 pb-4">
+					<div class=" z-10 flex flex-row justify-center pt-2 pb-2">
 						<h1 class=" text-center uppercase text-6xl xl:text-7xl font-bold text-white bg-green-base rounded-3xl px-8 py-4">{SITE_CONTACT}</h1>
 					</div>
 				</div>
@@ -238,17 +237,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_CONTACT } from '../consts';
 				
 				</div>
 
-				<div class=" pb-16 md:px-4 lg:px-12 flex flex-col gap-4 xl:flex-row">
-					<div class=" p-10 flex flex-col gap-4 items-center w-full bg-white rounded-2xl shadow-md ">
-						<h2 class=" text-green-base">Me Suivre</h2>
-						
-						<ul class=" flex flex-row gap-10">
-							<a href=""><li class=" flex flex-row gap-2 items-center"><img class=" w-8" src="/icon-instagram-portfolio-jaune.png" alt="Icon téléphone">@lestudiodemathilde</li></a>
-							<a href=""><li class=" flex flex-row gap-2 items-center"><img class=" w-8" src="/icon-facebook-portfolio-jaune.png" alt="Icon mail">Le Studio de Mathilde</li></a>
-							<a href=""><li class=" flex flex-row gap-2 items-center"><img class=" w-8" src="/icon-linkedin-portfolio-jaune.png" alt="Icon lieux">Mathilde DECOUX</li></a>
-						</ul>
-					</div>
-				</div>
+				<SocialMedia />
 			</div>
 		</section>
 		

@@ -1,11 +1,12 @@
 ---
 import BaseHead from '../../components/BaseHead.astro';
 import Navigation from '../../components/Navigation.astro';
-import TopNav from '../../components/Top-nav.astro';
 import Footer from '../../components/Footer.astro';
+import SocialMedia from '../../components/SocialMedia.astro';
+import FormattedDate from '../../components/FormattedDate.astro';
 import { SITE_TITLE, SITE_DESCRIPTION, SITE_BLOG } from '../../consts';
 import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
+
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -26,6 +27,24 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 
 			gtag('config', 'GTM-P3R88NLC');
 		</script>
+
+		<!-- Filtre Catégorie -->
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+			const button = document.getElementById("filter-button");
+			const menu = document.getElementById("filter-menu");
+		
+			button.addEventListener("click", () => {
+				menu.classList.toggle("hidden");
+			});
+		
+			document.addEventListener("click", (event) => {
+				if (!button.contains(event.target) && !menu.contains(event.target)) {
+				menu.classList.add("hidden");
+				}
+			});
+			});
+		</script>
 		
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
@@ -45,8 +64,6 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 		
 		<div class="flex flex-col min-h-dvh">
 
-			<TopNav />
-
 			<!-- Head -->
 			<header class=" bg-gradient-head-green-light bg-center bg-cover">
 				
@@ -58,7 +75,7 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 					<!-- Head - Content -->
 					<div class=" relative flex flex-col pt-16 pb-16">
 
-						<div class=" z-10 flex flex-row justify-center pt-4 pb-4">
+						<div class=" z-10 flex flex-row justify-center pt-2 pb-2">
 							<h2 class=" text-center uppercase text-6xl xl:text-7xl font-bold ">{SITE_BLOG}</h2>
 						</div>
 
@@ -67,51 +84,58 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 
 			</header>
 
-			<main class=" m-4 sm:m-0 pb-20">
-				<section class=" container">
-					<!-- Tag -->
-					<div class=" pl-6 pb-2 flex flex-row items-center gap-4">
-						<p class="text-md">Filter :</p>
-						<ul class=" flex flex-row flex-wrap gap-1 justify-start items-center pb-2 pr-10 md:pr-20">
-							<li class=" px-4 pt-2 pb-1 max-w-max rounded-lg bg-yellow-base hover:bg-yellow-dark text-md">
-								<a class="text-white" href="/blog">All</a>
-							</li>
-							{tags.map((tag) => (
-								<li class=" relative px-4 py-1 max-w-max rounded-lg text-white text-md">
-									<a class="
-										hover:before:content 
-										hover:before:absolute 
-										hover:before:w-1/2 
-										hover:before:h-[12px]
-										hover:before:rounded-lg 
-										hover:before:right-[5px] 
-										hover:before:bottom-[10px] 
-										hover:before:bg-yellow-base
-										hover:before:-z-10"
-									href={`/blog/${tag}/`}>#{tag}</a>
-								</li>))}
-						</ul>
-					</div>
+			<main class=" m-4 sm:m-0">
 
-					<!-- Card -->
-					<ul class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 gap-y-6 list-none m-0 p-0 md:gap-4">
-						{
-							posts.map((post) => (
+				<section class=" pb-8">
+					<div class=" container">
+						<!-- Tag -->
+						<div class="pb-2 flex flex-row items-center justify-end gap-4">
+							<div class=" relative">
+								<!-- Bouton Filtrer par Catégorie -->
+								<button class=" px-4 py-2 bg-yellow-base hover:bg-yellow-dark text-white text-sm rounded-lg" id="filter-button">Filtrer par catégorie</button>
+								
+								<!-- Liste déroulante -->
+								<ul id="filter-menu" class="hidden absolute -left-[63px] mt-2 w-56 bg-white border shadow-lg rounded-lg overflow-hidden z-50">
+									<li class="py-2 px-4 border-b hover:bg-gray-100">
+										<a class="block w-full text-sm text-black font-bold" href="/blog">Toutes les catégories</a>
+									</li>
+
+									{tags.map((tag) => (<li key={tag} class="py-2 px-4 border-b hover:bg-gray-100">
+										<a class="block w-full text-sm text-black" href={`/blog/${tag}/`}>
+										{tag}
+										</a>
+									</li>))}
+								</ul>
+							</div>
+						</div>
+	
+						<!-- Card -->
+						<ul class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 gap-y-6 list-none m-0 p-0 md:gap-4">
+							{posts.map((post) => (
 								<li class=" first:max-w-full md:first:col-start-1 md:first:col-end-3 lg:first:col-start-1 lg:first:col-end-4 w-full first:mb-4 text-center md:first:text-center md:first:mb-0">
 									<a class=" block" href={`/blog/${post.slug}/`}>
 
 										<img class=" w-full h-72 mb-2 rounded-xl grayscale hover:grayscale-0" src={post.data.heroImage} alt="" />
-										<h3 class=" m-0 text-black first:text-2xl text-sm font-bold px-12">{post.data.title}</h3>
+
+										<h3 class=" m-0 text-green-base text-lg first:text-xl font-bold px-12 rounded-xl">{post.data.title}</h3>
 										<p class=" m-0 text-black text-xs"><FormattedDate date={post.data.pubDate} /></p>
-										<ul class=" flex flex-row wrap justify-center">
-											<li class="text-xs">{post.data.tags}</li>
+										
+										<ul class="flex flex-wrap justify-center gap-2 mt-2">
+											{post.data.tags.map((tag, index) => (
+												<li key={index} class="text-xs bg-green-light text-white px-2 py-1 rounded-md">{tag}</li>
+											))}
 										</ul>
+
 									</a>
 								</li>
-							))
-						}
-					</ul>
+							))}
+						</ul>
+	
+					</div>
 				</section>
+
+				<SocialMedia />
+
 			</main>
 
 			<Footer />

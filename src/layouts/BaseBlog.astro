@@ -1,7 +1,6 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
 import Navigation from '../components/Navigation.astro';
-import TopNav from '../components/Top-nav.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION, SITE_BLOG } from '../consts';
 import { getCollection } from 'astro:content';
@@ -25,6 +24,24 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 
 			gtag('config', 'GTM-P3R88NLC');
 		</script>
+
+		<!-- Filtre Catégorie -->
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+			const button = document.getElementById("filter-button");
+			const menu = document.getElementById("filter-menu");
+		
+			button.addEventListener("click", () => {
+				menu.classList.toggle("hidden");
+			});
+		
+			document.addEventListener("click", (event) => {
+				if (!button.contains(event.target) && !menu.contains(event.target)) {
+				menu.classList.add("hidden");
+				}
+			});
+			});
+		</script>
 		
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
@@ -42,8 +59,6 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 		</style>
 	</head>
 	<body class=" bg-white-light">
-
-		<TopNav />
 
 		<!-- Head -->
 		<header class=" bg-gradient-head-green-light bg-center bg-cover">
@@ -65,25 +80,36 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 
 		</header>
 
-		<main class=" pb-20">
-			<section class="container">
-				<!-- Tag -->
-				<div class="container">
-					<ul class=" flex flex-row flex-wrap gap-1 justify-start pb-2 pr-40 md:pr-20">
-						<li class=" px-4 py-1 max-w-max rounded-lg bg-[#D9A324] hover:bg-[#B5881E] text-white text-sm">
-							<a href="/blog">All</a>
-						</li>
-						{tags.map((tag) => (
-							<li class=" px-4 py-1 max-w-max rounded-lg bg-[#D9A324] hover:bg-[#B5881E] text-white text-sm">
-								<a href={`/blog/${tag}/`}>{tag}</a>
-							</li>))}
-					</ul>
-				</div>
+		<main class=" m-4 sm:m-0">
 
-				<!-- Card -->
-				<div>
-                    <slot />
-                </div>
+			<section class=" pb-8">
+				<div class=" container">
+					<!-- Tag -->
+					<div class="pb-2 flex flex-row items-center justify-end gap-4">
+						<div class=" relative">
+							<!-- Bouton Filtrer par Catégorie -->
+							<button class=" px-4 py-2 bg-yellow-base hover:bg-yellow-dark text-white text-sm rounded-lg" id="filter-button">Filtrer par catégorie</button>
+							
+							<!-- Liste déroulante -->
+							<ul id="filter-menu" class="hidden absolute -left-[63px] mt-2 w-56 bg-white border shadow-lg rounded-lg overflow-hidden z-50">
+								<li class="py-2 px-4 border-b hover:bg-gray-100">
+									<a class="block w-full text-sm text-black" href="/blog">Toutes les catégories</a>
+								</li>
+
+								{tags.map((tag) => (<li key={tag} class="py-2 px-4 border-b hover:bg-gray-100">
+									<a class="block w-full text-sm text-black" href={`/blog/${tag}/`}>
+									{tag}
+									</a>
+								</li>))}
+							</ul>
+						</div>
+					</div>
+
+					<!-- Card -->
+					<div>
+						<slot />
+					</div>
+				</div>
 			</section>
 		</main>
 

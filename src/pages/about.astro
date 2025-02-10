@@ -1,8 +1,8 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
 import Navigation from '../components/Navigation.astro';
-import TopNav from '../components/Top-nav.astro';
 import Footer from '../components/Footer.astro';
+import SocialMedia from '../components/SocialMedia.astro';
 import { SITE_TITLE, SITE_DESCRIPTION, SITE_ABOUT } from '../consts';
 ---
 
@@ -26,9 +26,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_ABOUT } from '../consts';
 		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLBJN7XG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<!-- End Google Tag Manager (noscript) -->
 
-			<div class="flex flex-col min-h-dvh">
-
-			<TopNav />
+		<div class="flex flex-col min-h-dvh">
 
 			<!-- Head -->
 			<header class=" bg-gradient-head bg-center bg-cover">
@@ -41,7 +39,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_ABOUT } from '../consts';
 					<!-- Head - Content -->
 					<div class=" relative flex flex-col pt-16 pb-16">
 
-						<div class=" z-10 flex flex-row justify-center pt-4 pb-4">
+						<div class=" z-10 flex flex-row justify-center pt-2 pb-2">
 							<h1 class=" text-center uppercase text-6xl xl:text-7xl font-bold ">{SITE_ABOUT}</h1>
 						</div>
 
@@ -255,6 +253,8 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_ABOUT } from '../consts';
 				<div class=" pt-5 pb-10 container">
 					<div class=" flex justify-center h-60"><img src="/img-illustration-mathilde-decoux-portfolio.png" alt=""></div>
 				</div>
+
+				<SocialMedia />
 
 			</main>
 

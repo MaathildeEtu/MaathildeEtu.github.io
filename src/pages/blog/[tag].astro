@@ -27,21 +27,23 @@ const { posts } = Astro.props;
 <BaseBlog>
     <!-- Card -->
     <ul class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 gap-y-6 list-none m-0 p-0 md:gap-4">
-        {
-            posts.map((post) => (
-                <li class=" first:max-w-full first:col-start-1 first:col-end-4 w-full first:mb-4 first:text-center md:text-center md:first:mb-0">
-                    <a class=" block" href={`/blog/${post.slug}/`}>
+        {posts.map((post) => (
+            <li class=" first:max-w-full md:first:col-start-1 md:first:col-end-3 lg:first:col-start-1 lg:first:col-end-4 w-full first:mb-4 text-center md:first:text-center md:first:mb-0">
+                <a class=" block" href={`/blog/${post.slug}/`}>
 
-                        <img class=" w-full h-72 mb-2 rounded-xl" src={post.data.heroImage} alt="" />
-                        <h3 class=" m-0 text-black md:first:text-2xl">{post.data.title}</h3>
-                        <p class=" m-0 text-black">
-                            <FormattedDate date={post.data.pubDate} />
-                        </p>
-                        <p class=" m-0 text-black text-sm px-6 leading-4">{post.data.description}</p>
+                    <img class=" w-full h-72 mb-2 rounded-xl grayscale hover:grayscale-0" src={post.data.heroImage} alt="" />
 
-                    </a>
-                </li>
-            ))
-        }
+                    <h3 class=" m-0 text-green-base text-lg first:text-xl font-bold px-12 rounded-xl">{post.data.title}</h3>
+                    <p class=" m-0 text-black text-xs"><FormattedDate date={post.data.pubDate} /></p>
+                    
+                    <ul class="flex flex-wrap justify-center gap-2 mt-2">
+                        {post.data.tags.map((tag, index) => (
+                            <li key={index} class="text-xs bg-green-light text-white px-2 py-1 rounded-md">{tag}</li>
+                        ))}
+                    </ul>
+
+                </a>
+            </li>
+        ))}
     </ul>
 </BaseBlog>
