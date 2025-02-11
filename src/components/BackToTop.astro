@@ -1,23 +1,29 @@
 ---
+
 --- 
-<button id="backToTop" class="fixed bottom-5 right-5 p-4 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-400" style="display: none;" aria-label="Retour en haut de la page"> ↑ </button>
 
 <script>
-    // Récupère l'élément bouton
-    const backToTopButton = document.getElementById('backToTop');
-    
-    // Afficher le bouton lorsque l'utilisateur fait défiler la page
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 200) { // Afficher le bouton après un certain défilement
-        backToTopButton.style.display = 'block';
-        } else {
-        backToTopButton.style.display = 'none';
-        }
-    });
+    document.addEventListener('DOMContentLoaded', () => {
+      // Récupère l'élément bouton
+        const backToTopButton = document.getElementById('backToTop');
 
-    // Déplacer l'utilisateur en haut de la page au clic sur le bouton
-    backToTopButton.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        // Vérifie si l'élément existe avant d'ajouter les événements
+        if (backToTopButton) {
+            // Afficher le bouton lorsque l'utilisateur fait défiler la page
+            window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+                backToTopButton.style.display = 'block'; // Afficher le bouton
+            } else {
+                backToTopButton.style.display = 'none'; // Cacher le bouton
+            }
+            });
+
+            // Déplacer l'utilisateur en haut de la page au clic sur le bouton
+            backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
     });
 </script>
 
+<button id="backToTop" class="fixed bottom-5 right-5 p-4 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-400" style="display: none;" aria-label="Retour en haut de la page"> ↑ </button>
