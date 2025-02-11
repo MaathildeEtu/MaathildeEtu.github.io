@@ -16,6 +16,9 @@ export default {
 				// 'fond-index' : "linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.8) 100%), url('/img-background-right-mathilde-decoux-portfolio.png')",
 				// Image de Fond - Ordinateur à gauche
 				'fond-index' : "linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.8) 100%), url('/img-background-left-mathilde-decoux-portfolio.png')",
+				'fond-social-media' : "linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.8) 100%), url('/img-background-appareil-photo-mathilde-decoux-portfolio.jpg')",
+
+				
 			},
 			fontFamily: {
 				'league-script': 'League Script, cursive',

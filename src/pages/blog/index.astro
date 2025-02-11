@@ -51,8 +51,42 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 				}
 				});
 		</script>
+
+		<!-- Nav -->
+		<script>
+			window.addEventListener('scroll', function() {
+				const navbar = document.getElementById('navbar');
+				const navContent = document.getElementById('nav-content');
+				const portfolioTitle = document.getElementById('portfolio-title');
+				const nameTitle = document.getElementById('name-title');
+				
+				// Condition de scroll (changer le chiffre pour ajuster la vitesse du scroll)
+				if (window.scrollY > 50) {
+					navbar.classList.add('py-2', 'shadow-md'); // Réduit la taille et ajoute une ombre légère
+					navbar.classList.remove('py-6');
+					navContent.classList.remove('px-40');
+					navContent.classList.add('px-20'); // Réduit le padding
+					
+					// Réduire la taille du texte
+					portfolioTitle.classList.add('text-3xl'); // Réduit la taille de "Portfolio"
+					portfolioTitle.classList.remove('text-5xl');
+					nameTitle.classList.add('text-xs'); // Réduit la taille du sous-titre
+					nameTitle.classList.remove('text-sm');
+				} else {
+					navbar.classList.remove('py-2', 'shadow-md');
+					navbar.classList.add('py-6');
+					navContent.classList.add('px-40');
+					navContent.classList.remove('px-20');
+					
+					// Rétablir la taille normale du texte
+					portfolioTitle.classList.remove('text-3xl');
+					portfolioTitle.classList.add('text-5xl');
+					nameTitle.classList.remove('text-xs');
+					nameTitle.classList.add('text-sm');
+				}
+			});
+		</script>
 		
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
 			.calcul {
 				width: cal(50% - 1rem);
@@ -65,21 +99,23 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 				box-shadow: var(--box-shadow);
 			}
 		</style>
+
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body class=" bg-white-light">
 		
 		<div class="flex flex-col min-h-dvh">
 
-			<!-- Head -->
-			<header class=" bg-gradient-head-green-light bg-center bg-cover">
-				
-				<Navigation />
+			<Navigation />
 
+			<!-- Head -->
+			<header class=" bg-gradient-head bg-center bg-cover">
+					
 				<!-- Container -->
 				<div class="container">
 
 					<!-- Head - Content -->
-					<div class=" relative flex flex-col pt-16 pb-16">
+					<div class=" relative flex flex-col pt-52 pb-16">
 
 						<div class=" z-10 flex flex-row justify-center pt-2 pb-2">
 							<h2 class=" text-center uppercase text-6xl xl:text-7xl font-bold ">{SITE_BLOG}</h2>
@@ -89,7 +125,6 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 
 					</div>
 				</div>
-
 			</header>
 
 			<main class=" m-4 sm:m-0">

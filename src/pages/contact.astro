@@ -20,7 +20,6 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_CONTACT } from '../consts';
 			gtag('config', 'GTM-P3R88NLC');
 		</script>
 
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 		<script type="text/javascript">
 			(function() {
@@ -101,34 +100,64 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_CONTACT } from '../consts';
 			});
 		</script>
 
+		<!-- Nav -->
+		<script>
+			window.addEventListener('scroll', function() {
+				const navbar = document.getElementById('navbar');
+				const navContent = document.getElementById('nav-content');
+				const portfolioTitle = document.getElementById('portfolio-title');
+				const nameTitle = document.getElementById('name-title');
+				
+				// Condition de scroll (changer le chiffre pour ajuster la vitesse du scroll)
+				if (window.scrollY > 50) {
+					navbar.classList.add('py-2', 'shadow-md'); // Réduit la taille et ajoute une ombre légère
+					navbar.classList.remove('py-6');
+					navContent.classList.remove('px-40');
+					navContent.classList.add('px-20'); // Réduit le padding
+					
+					// Réduire la taille du texte
+					portfolioTitle.classList.add('text-3xl'); // Réduit la taille de "Portfolio"
+					portfolioTitle.classList.remove('text-5xl');
+					nameTitle.classList.add('text-xs'); // Réduit la taille du sous-titre
+					nameTitle.classList.remove('text-sm');
+				} else {
+					navbar.classList.remove('py-2', 'shadow-md');
+					navbar.classList.add('py-6');
+					navContent.classList.add('px-40');
+					navContent.classList.remove('px-20');
+					
+					// Rétablir la taille normale du texte
+					portfolioTitle.classList.remove('text-3xl');
+					portfolioTitle.classList.add('text-5xl');
+					nameTitle.classList.remove('text-xs');
+					nameTitle.classList.add('text-sm');
+				}
+			});
+		</script>
+
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body>
+	<body class="bg-fond-social-media bg-cover bg-fixed bg-center">
+
+		<Navigation />
 
 		<!-- Head -->
 		<header class=" bg-gradient-head bg-center bg-cover">
 				
-			<Navigation />
-
 			<!-- Container -->
 			<div class="container">
 
 				<!-- Head - Content -->
-				<!-- Container -->
-				<div class="container">
+				<div class=" relative flex flex-col pt-52 pb-16">
 
-					<!-- Head - Content -->
-					<div class=" relative flex flex-col pt-16 pb-16">
-
-						<div class=" z-10 flex flex-row justify-center pt-2 pb-2">
-							<h2 class=" text-center uppercase text-6xl xl:text-7xl font-bold ">{SITE_CONTACT}</h2>
-						</div>
-
-						<FilAriane />
-
+					<div class=" z-10 flex flex-row justify-center pt-2 pb-2">
+						<h2 class=" text-center uppercase text-6xl xl:text-7xl font-bold ">{SITE_CONTACT}</h2>
 					</div>
+
+					<FilAriane />
+
 				</div>
 			</div>
-
 		</header>
 
 		<section>
@@ -233,7 +262,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_CONTACT } from '../consts';
 								<input 
 									type="submit" 
 									value="Envoyer" 
-									class="flex float-end px-6 py-3 bg-green-base text-white font-semibold rounded-lg hover:bg-yellow-light transition-colors hover:bg-green-dark"
+									class="flex float-end px-6 py-3 bg-green-base text-white font-semibold rounded-lg transition-colors hover:bg-green-dark"
 								>
 							</div>
 
@@ -246,11 +275,11 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_CONTACT } from '../consts';
 				
 				</div>
 
-				<SocialMedia />
 			</div>
 		</section>
-		
 
+		<SocialMedia />
+		
 		<Footer />
 	</body>
 </html>
