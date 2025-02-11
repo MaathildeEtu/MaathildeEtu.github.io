@@ -1,5 +1,42 @@
 ---
+
 ---
+
+<!-- Nav -->
+<script>
+    window.addEventListener('scroll', function() {
+        const navbar = document.getElementById('navbar');
+        const navContent = document.getElementById('nav-content');
+        const portfolioTitle = document.getElementById('portfolio-title');
+        const nameTitle = document.getElementById('name-title');
+
+        // Vérifiez si les éléments existent avant d'appliquer des modifications
+        if (navbar && navContent && portfolioTitle && nameTitle) {
+            // Condition de scroll (changer le chiffre pour ajuster la vitesse du scroll)
+            if (window.scrollY > 50) {
+                navbar.classList.add('py-2', 'shadow-md');
+                navbar.classList.remove('py-6');
+                navContent.classList.remove('px-40');
+                navContent.classList.add('px-20');
+
+                portfolioTitle.classList.add('text-3xl');
+                portfolioTitle.classList.remove('text-5xl');
+                nameTitle.classList.add('text-xs');
+                nameTitle.classList.remove('text-sm');
+            } else {
+                navbar.classList.remove('py-2', 'shadow-md');
+                navbar.classList.add('py-6');
+                navContent.classList.add('px-40');
+                navContent.classList.remove('px-20');
+
+                portfolioTitle.classList.remove('text-3xl');
+                portfolioTitle.classList.add('text-5xl');
+                nameTitle.classList.remove('text-xs');
+                nameTitle.classList.add('text-sm');
+            }
+        }
+    });
+</script>
 
 <!-- Nav -->
 <nav class="m-4 sm:m-0 py-6 fixed z-50 w-full bg-white shadow-lg transition-all duration-300" id="navbar">
