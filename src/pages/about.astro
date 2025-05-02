@@ -21,6 +21,26 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_ABOUT } from '../consts';
 
 			gtag('config', 'GTM-P3R88NLC');
 		</script>
+
+		<!-- JavaScript pour gérer l'ouverture/fermeture -->
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				const toggleBtn = document.getElementById("toggle-btn");
+				const missionList = document.getElementById("mission-list");
+			
+				toggleBtn.addEventListener("click", () => {
+					if (missionList.classList.contains("max-h-0")) {
+						missionList.classList.remove("max-h-0", "opacity-0");
+						missionList.classList.add("max-h-96", "opacity-100");
+						toggleBtn.innerHTML = '<p class="text-sm text-white font-avenir font-bold">Masquer les missions</p>';
+					} else {
+						missionList.classList.remove("max-h-96", "opacity-100");
+						missionList.classList.add("max-h-0", "opacity-0");
+						toggleBtn.innerHTML = '<p class="text-sm text-white font-avenir font-bold">Mes missions</p>';
+					}
+				});
+			});
+		</script>
 		
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
@@ -57,15 +77,11 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_ABOUT } from '../consts';
 				<!-- About Me -->
 				<section class=" m-4 sm:m-0 relative">
 					<div class="container">
-						<div class=" absolute invisible lg:visible h-16 z-10 top-32 right-4"><img class=" object-cover h-full drop-shadow-xl" src="/element/element-blue-pointilletlarge.png" alt=""></div>
-						<div class=" absolute h-6 z-10 -bottom-3 left-48"><img class=" object-cover h-full drop-shadow-xl" src="/element/element-yellowdark-cross.png" alt=""></div>
-						<div class=" absolute h-6 z-10 -bottom-3 left-60"><img class=" object-cover h-full drop-shadow-xl" src="/element/element-yellowdark-cross.png" alt=""></div>
 
-						<div class=" relative grid lg:grid-cols-3 p-10 md:mx-16 rounded-2xl bg-[#007368]">
+						<div class=" relative grid lg:grid-cols-3 p-10 md:mx-16 rounded-2xl bg-green-base">
 							<div class=" col-span-2 flex flex-col gap-2">
-								<h3><span class="font-ephesis text-white text-5xl ">About Me</span></h3>
+								<h3 class=" font-avenir"><span class="font-gliker text-white text-5xl ">About Me</span></h3>
 								<p class=" text-white text-sm">Passionnée par la communication et le design, j'ai acquis des compétences variées dans la création de contenus, la gestion de projets et le développement web. Polyvalente et créative, je m'investis dans des projets qui allient innovation et impact, en apportant des solutions adaptées aux besoins de chaque client. Mon objectif est de valoriser chaque projet grâce à une stratégie de communication efficace et des visuels percutants.</p>
-								<div class=" flex justify-end"><a class=" py-1 px-4 rounded-lg text-[#007368] bg-white text-md" href="/about">About Me</a></div>
 							</div>
 							<div class=" absolute invisible lg:visible bottom-8 right-14 h-72 xl:h-80">
 								<img class=" object-cover h-full drop-shadow-xl" src="/img-profil-mathilde-decoux-portfolio.png" alt="">
@@ -85,44 +101,51 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_ABOUT } from '../consts';
 				<section class=" m-4 sm:m-0 ">
 					<div class=" container flex flex-col gap-6 lg:gap-12">
 
-						<h2 class=" text-center text-5xl uppercase font-bold">Un Aperçu de <span class="font-ephesis text-green-dark-800 normal-case text-6xl ">Mon Chemin</span></h2>
+						<h2 class=" text-center text-3xl uppercase font-avenir">Un Aperçu de <span class="font-gliker text-green-base normal-case text-4xl ">Mon Chemin</span></h2>
 
+						<!-- Langues et centres d'interêts -->
 						<div class=" relative flex flex-col lg:flex-row items-center gap-4 lg:gap-8 lg:px-24 ">
 
-							<div class=" absolute invisible lg:visible h-16 z-10 top-52 right-[560px]"><img class=" object-cover h-full drop-shadow-xl" src="/element/element-yellowdark-pointilletlarge.png" alt=""></div>
-							<div class=" absolute h-6 z-10 -bottom-3 right-36"><img class=" object-cover h-full drop-shadow-xl" src="/element/element-blue-cross.png" alt=""></div>
+							<div class="lg:w-1/2 flex flex-col items-center gap-4 lg:gap-x-16 lg:gap-y-8 lg:pl-4">
 
-							<div class="lg:w-1/2 flex flex-row flex-wrap gap-4 lg:gap-x-16 lg:gap-y-8 lg:pl-4">
+								<div class=" flex flex-col gap-4 items-center">
+									<h3 class=" font-avenir">Mes <span class="font-gliker text-blue-base text-3xl ">langues</span></h3>
+									<ul class=" flex flex-row gap-2 ">
+										<li><p class=" font-avenir text-md"><span class=" font-bold">Anglais</span> - A2</p></li>
+										<li><p class=" font-avenir text-md"><span class=" font-bold">Espagnol</span> - C1</p></li>
+									</ul>
+								</div>
 
-								<div class=" flex flex-col gap-1">
-									<h3>Mes <span class="font-ephesis text-green-dark-800 text-5xl ">centres d'intérêts</span></h3>
-									<ul class=" pl-2">
-										<li><p>• Design / Graphisme</p></li>
-										<li><p>• Photographie Sportive</p></li>
-										<li><p>• Lecture</p></li>
-										<li><p>• Sauvetage Sportif</p></li>
-										<li><p>• Bénévolat</p></li>
+								<div class=" flex flex-col gap-4 items-center">
+									<ul class=" px-6 flex flex-wrap gap-x-1 gap-y-1 justify-center">
+										<li class=" px-3 pb-1 pt-2 bg-green-base max-w-max rounded-lg "><p class=" text-xs text-white uppercase font-avenir font-bold">Lecture</p></li>
+										<li class=" px-3 pb-1 pt-2 bg-yellow-base max-w-max rounded-lg "><p class=" text-xs text-white uppercase font-avenir font-bold">Évenementiel</p></li>
+										<li class=" px-3 pb-1 pt-2 bg-yellow-base max-w-max rounded-lg "><p class=" text-xs text-white uppercase font-avenir font-bold">Gestion Projet</p></li>
+										<li class=" px-3 pb-1 pt-2 bg-green-base max-w-max rounded-lg "><p class=" text-xs text-white uppercase font-avenir font-bold">UI/UX</p></li>
+										<li class=" px-3 pb-1 pt-2 bg-yellow-base max-w-max rounded-lg "><p class=" text-xs text-white uppercase font-avenir font-bold">Illustration</p></li>
+										<li class=" px-3 pb-1 pt-2 bg-yellow-base max-w-max rounded-lg "><p class=" text-xs text-white uppercase font-avenir font-bold">Photographie</p></li>
+										<li class=" px-3 pb-1 pt-2 bg-green-base max-w-max rounded-lg "><p class=" text-xs text-white uppercase font-avenir font-bold">Social Media</p></li>
+										<li class=" px-3 pb-1 pt-2 bg-green-base max-w-max rounded-lg "><p class=" text-xs text-white uppercase font-avenir font-bold">Bénévolat</p></li>
+										<li class=" px-3 pb-1 pt-2 bg-yellow-base max-w-max rounded-lg "><p class=" text-xs text-white uppercase font-avenir font-bold">Sauvetage Sportif</p></li>
+										<li class=" px-3 pb-1 pt-2 bg-yellow-base max-w-max rounded-lg "><p class=" text-xs text-white uppercase font-avenir font-bold">Identité Visuelle</p></li>	
+										<li class=" px-3 pb-1 pt-2 bg-green-base max-w-max rounded-lg "><p class=" text-xs text-white uppercase font-avenir font-bold">Webdesign</p></li>							
 									</ul>
 								</div>
 								
-								<div class=" flex flex-col gap-1">
-									<h3>Mes <span class="font-ephesis text-green-dark-800 text-5xl ">langues</span></h3>
-									<ul class=" pl-2">
-										<li><p>• Anglais - A2</p></li>
-										<li><p>• Espagnol - C1</p></li>
-									</ul>
-								</div>
-	
-								<div class=" flex flex-col gap-1">
-									<h3>Mes <span class="font-ephesis text-green-dark-800 text-5xl ">formations</span></h3>
+								<div class=" flex flex-col gap-4 items-center">
+									<h3 class=" font-avenir">Mes <span class="font-gliker text-blue-base text-3xl ">formations</span></h3>
 
-									<p class=" pl-2 font-bold">2022 - <span class="italic">(En cours)</span></p>
-									<p class=" pl-2">IUT du Limousin - Limoges (87)</p>
-									<p class=" pl-2">BUT MMI (Métiers du Multimédia et de l'Internet)</p>
-	
-									<p class=" pl-2 font-bold">2021 - 2022</p>
-									<p class=" pl-2">Lycée Général Jean Giraudoux - Châteauroux (36)</p>
-									<p class=" pl-2">Baccalauréat et Bachillerato (BacEspagnol) </p>
+									<div class=" flex flex-col items-center">
+										<p class=" font-bold">2022 - <span class="italic">(En cours)</span></p>
+										<p class=""><span class=" font-bold">IUT du Limousin</span> - Limoges (87)</p>
+										<a class=" hover:underline" href="https://www.iut.unilim.fr/les-formations/but/metiers-du-multimedia-et-de-linternet/"><p class="">BUT MMI (Métiers du Multimédia et de l'Internet)</p></a>
+									</div>
+
+									<div class=" flex flex-col items-center">
+										<p class=" font-bold">2021 - 2022</p>
+										<p class=""><span class=" font-bold">Lycée Général Jean Giraudoux</span> - Châteauroux (36)</p>
+										<a class=" hover:underline" href="https://www.education.gouv.fr/reussir-au-lycee/le-bachibac-double-delivrance-du-baccalaureat-francais-et-du-bachillerato-espagnol-7403"><p class="">Baccalauréat et Bachillerato (Bac Espagnol) </p></a>
+									</div>
 								</div>
 							</div>
 
@@ -139,71 +162,125 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_ABOUT } from '../consts';
 							</div>
 
 							<div class="lg:w-1/2 flex flex-col gap-4 lg:pr-4">
-								<h3 class=" text-center lg:text-left">Mes <span class="font-ephesis text-green-dark-800 text-5xl ">expérience</span></h3>
-								
-								<div>
-									<h4>Responsable Communication (mission bénévole)</h4>
-									<p class=" font-bold">ASSC - Association des Sauveteurs Secouristes de
-										Châteauroux - depuis Octobre 2022</p>
-									<ul>
-										<li><p>• Gestion du site internet (Article, Information formation, photo)</p></li>
-										<li><p>• Gestion des réseaux sociaux (Formation, Sport, Événements...)</p></li>
-										<li><p>• Création des visuels, affiches, flyer, vidéos, photos ...</p></li>
-									</ul>
+								<h3 class=" font-avenir">Mes <span class="font-gliker text-blue-base text-3xl ">expérience</span></h3>
 
-									<p class=" font-bold">Ekiden 36 - depuis Janvier 2023</p>
-									<ul>
-										<li><p>• Gestion des réseaux sociaux (Facebook et Instagram</p></li>
-										<li><p>• Création des visuels (affiches, flyer, vidéos, post ...)</p></li>
-										<li><p>• Gestion du site internet</p></li>
-									</ul>
-								</div>
-								
-								<div>
-									<h4>Survaillante Sauveteuse</h4>
-									<p class=" font-bold">Piscine de Levroux - Juin à Août 2024</p>
-									<ul>
-										<li><p>• Suiveillance Baignade et Plage</p></li>
-										<li><p>• Secourisme</p></li>
-									</ul>
-								</div>
+								<ul class=" flex flex-col gap-4">
+									<li>
+										<h4 class=" font-gliker font-bold text-lg">Septembre 2024 / En cours <span class="font-mono">- Agence Com’Bawa</span></h4>
+										<p class="font-avenir font-medium pb-2">Alternance en webdesign et graphisme</p>
 
-								<div>
-									<h4>Pause Médicale</h4>
-									<p class=" font-bold">Été 2023</p>
-								</div>
+										<button class="flex items-start toggle-btn px-2 py-1 bg-green-base rounded-md transition-colors duration-200 hover:bg-green-dark" id="toggle-btn"><p class="text-sm text-white font-avenir font-bold">Mes missions</p></button>
+										
+										<ul id="mission-list" class="mission-list pl-4 max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out">
+											<li><p class="font-avenir font-light">• Création et Gestion de site internet</p></li>
+											<li><p class="font-avenir font-light">• Création visuel et Gestion de Réseaux Sociaux</p></li>
+											<li><p class="font-avenir font-light">• Rendez-vous client</p></li>
+										</ul>
+									</li>
 
-								<div>
-									<h4>Ajointe Cheffe de Poste</h4>
-									<p class=" font-bold">Baignade de Belle-Isle Châteauroux - Juillet 2022</p>
-									<ul>
-										<li><p>• Administration du poste</p></li>
-										<li><p>• Gestion d'une équipe</p></li>
-										<li><p>• Suiveillance Baignade et Plage</p></li>
-										<li><p>• Secourisme</p></li>
-									</ul>
-								</div>
+									<li>
+										<h4 class=" font-gliker font-bold text-lg">Avril / Juin 2024 <span class=" font-mono">- Agence Com’Bawa</span></h4>
+										<p class=" font-avenir font-medium pb-2">Stagiaire en webdesign et graphisme</p>
+										
+										<button class="flex items-start toggle-btn px-2 py-1 bg-green-base rounded-md transition-colors duration-200 hover:bg-green-dark" id="toggle-btn"><p class="text-sm text-white font-avenir font-bold">Mes missions</p></button>
 
-								<div>
-									<h4>Sauveteur Qualifié</h4>
-									<p class=" font-bold">Baignade de Belle-Isle Châteauroux - Juillet 2021</p>
-									<ul>
-										<li><p>• Suiveillance Baignade et Plage</p></li>
-										<li><p>• Secourisme</p></li>
-									</ul>
-								</div>
+										<ul id="mission-list" class="mission-list pl-4 max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out">
+											<li><p class=" font-avenir font-light">• Création visuels</p></li>
+											<li><p class=" font-avenir font-light">• Création et Gestion de site internet</p></li>
+											<li><p class=" font-avenir font-light">• Interview</p></li>
+											<li><p class=" font-avenir font-light">• Rendez-vous client</p></li>
+										</ul>
+									</li>
 
+									<li>
+										<h4 class=" font-gliker font-bold text-lg">Depuis Décembre 2024 <span class=" font-mono">- Ligue Régionale Centre-Val de Loire de Sauvetage et de Secourisme</span></h4>
+										<p class=" font-avenir font-medium pb-2">Responsable Communication (mission bénévole)</p>
+										<button class="flex items-start toggle-btn px-2 py-1 bg-green-base rounded-md transition-colors duration-200 hover:bg-green-dark" id="toggle-btn"><p class="text-sm text-white font-avenir font-bold">Mes missions</p></button>
+										<ul id="mission-list" class="mission-list pl-4 max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out">
+											<li><p class=" font-avenir font-light">• Création Pôle Communication</p></li>
+											<li><p class=" font-avenir font-light">• Gestion réseaux sociaux</p></li>
+											<li><p class=" font-avenir font-light">• Création de visuels</p></li>
+											<li><p class=" font-avenir font-light">• Photographie</p></li>
+										</ul>
+									</li>
+
+									<li>
+										<h4 class=" font-gliker font-bold text-lg">Depuis Décembre 2024 <span class=" font-mono">- Fédération Française de Sauvetage et de Secourisme</span></h4>
+										<p class=" font-avenir font-medium pb-2">Responsable Communication (mission bénévole)</p>
+										<button class="flex items-start toggle-btn px-2 py-1 bg-green-base rounded-md transition-colors duration-200 hover:bg-green-dark" id="toggle-btn"><p class="text-sm text-white font-avenir font-bold">Mes missions</p></button>
+										<ul id="mission-list" class="mission-list pl-4 max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out">
+											<li><p class=" font-avenir font-light">• Gestion réseaux sociaux national</p></li>
+											<li><p class=" font-avenir font-light">• Création de visuels (affiches, flyer, vidéos, photos ...)</p></li>
+											<li><p class=" font-avenir font-light">• Gestion d’évènement</p></li>
+											<li><p class=" font-avenir font-light">• Photographie</p></li>
+										</ul>
+									</li>
+
+									<li>
+										<h4 class=" font-gliker font-bold text-lg">Depuis Décembre 2024 <span class=" font-mono">- Fédération Française de Sauvetage et de Secourisme</span></h4>
+										<p class=" font-avenir font-medium pb-2">Graphiste et Photographe (mission bénévole)</p>
+										<button class="flex items-start toggle-btn px-2 py-1 bg-green-base rounded-md transition-colors duration-200 hover:bg-green-dark" id="toggle-btn"><p class="text-sm text-white font-avenir font-bold">Mes missions</p></button>
+										<ul id="mission-list" class="mission-list pl-4 max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out">
+											<li><p class=" font-avenir font-light">• Gestion réseaux sociaux national</p></li>
+											<li><p class=" font-avenir font-light">• Création de visuels (affiches, flyer, vidéos, photos ...)</p></li>
+											<li><p class=" font-avenir font-light">• Gestion d’évènement</p></li>
+											<li><p class=" font-avenir font-light">• Photographie</p></li>
+										</ul>
+									</li>
+
+									<li>
+										<h4 class=" font-gliker font-bold text-lg">Depuis Janvier 2023 <span class=" font-mono">- Ekiden 36</span></h4>
+										<p class=" font-avenir font-medium pb-2">Responsable Communication (mission bénévole)</p>
+										<button class="flex items-start toggle-btn px-2 py-1 bg-green-base rounded-md transition-colors duration-200 hover:bg-green-dark" id="toggle-btn"><p class="text-sm text-white font-avenir font-bold">Mes missions</p></button>
+										<ul id="mission-list" class="mission-list pl-4 max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out">
+											<li><p class=" font-avenir font-light">• Gestion réseaux sociaux</p></li>
+											<li><p class=" font-avenir font-light">• Création de visuels (affiches, flyer, vidéos, photos ...)</p></li>
+											<li><p class=" font-avenir font-light">• Photographie</p></li>
+										</ul>
+									</li>
+
+									<li>
+										<h4 class=" font-gliker font-bold text-lg">Depuis Octobre 2022 <span class=" font-mono">- Association des Sauveteurs Secouristes de Châteauroux</span></h4>
+										<p class=" font-avenir font-medium pb-2">Responsable Communication (mission bénévole)</p>
+										<button class="flex items-start toggle-btn px-2 py-1 bg-green-base rounded-md transition-colors duration-200 hover:bg-green-dark" id="toggle-btn"><p class="text-sm text-white font-avenir font-bold">Mes missions</p></button>
+										<ul id="mission-list" class="mission-list pl-4 max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out">
+											<li><p class=" font-avenir font-light">• Gestion site web</p></li>
+											<li><p class=" font-avenir font-light">• Gestion réseaux sociaux</p></li>
+											<li><p class=" font-avenir font-light">• Création de visuels (affiches, flyer, vidéos, photos ...)</p></li>
+											<li><p class=" font-avenir font-light">• Photographie</p></li>
+											<li><p class=" font-avenir font-light">• Gestion d’évènement</p></li>
+											<li><p class=" font-avenir font-light">• Forum</p></li>
+											<li><p class=" font-avenir font-light">• Formation</p></li>
+										</ul>
+									</li>
+
+									<li>
+										<h4 class=" font-gliker font-bold text-lg">Juillet & Août 2024 <span class=" font-mono">- Piscine Municipale Levroux</span></h4>
+										<p class=" font-avenir font-medium pb-2">Chef de bassin et Surveillante Sauveteuse</p>
+									</li>
+
+									<li>
+										<h4 class=" font-gliker font-bold text-lg">Juillet 2022 <span class=" font-mono">- Baignade de Belle-Isle Châteauroux</span></h4>
+										<p class=" font-avenir font-medium pb-2">Cheffe de Poste Adjointe</p>
+									</li>
+
+									<li>
+										<h4 class=" font-gliker font-bold text-lg">Juillet 2021 <span class=" font-mono">- Baignade de Belle-Isle Châteauroux</span></h4>
+										<p class=" font-avenir font-medium pb-2">Sauveteur Qualifié</p>
+									</li>
+
+								</ul>
 							</div>
 
 						</div>
 
-						<div class=" relative flex flex-col items-center gap-8 lg:px-12 ">
-							<h3>Mes <span class="font-ephesis text-green-dark-800 text-5xl ">compétences</span></h3>
+						<!-- <div class=" relative flex flex-col items-center gap-8 lg:px-12 ">
+							<h3 class=" font-avenir">Mes <span class="font-gliker text-green-base text-3xl ">compétences</span></h3>
 
 							<div class=" flex flex-col md:flex-row justify-center md:flex-wrap gap-4 md:gap-8 w-full">
 
 								<div class=" w-max">
-									<h4>Communication</h4>
+									<h4 class=" font-gliker text-xl">Communication</h4>
 									<ul>
 										<li><p>• Gestion de prolet</p></li>
 										<li><p>• Communication Interne et externe</p></li>
@@ -214,7 +291,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_ABOUT } from '../consts';
 								</div>
 
 								<div class=" w-max">
-									<h4>Graphisme</h4>
+									<h4 class=" font-gliker text-xl">Graphisme</h4>
 									<ul>
 										<li><p>• Création graphique</p></li>
 										<li><p>• Suite Adobe</p></li>
@@ -225,7 +302,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_ABOUT } from '../consts';
 								</div>
 
 								<div class=" w-max">
-									<h4>Programmation / Webdesign</h4>
+									<h4 class=" font-gliker text-xl">Programmation / Webdesign</h4>
 									<ul>
 										<li><p>• HTML/CSS</p></li>
 										<li><p>• Javascript/PHP</p></li>
@@ -234,7 +311,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_ABOUT } from '../consts';
 								</div>
 
 								<div class=" w-max">
-									<h4>Sauvetage / Secourisme</h4>
+									<h4 class=" font-gliker text-xl">Sauvetage / Secourisme</h4>
 									<ul>
 										<li><p>• BNSSA (2021) <span class=" text-red-800">À jour</span></p></li>
 										<li><p>• PSE1 (2021) <span class=" text-red-800">À jour</span></p></li>
@@ -248,15 +325,10 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_ABOUT } from '../consts';
 								</div>
 
 							</div>
-						</div>
+						</div> -->
 						
 					</div>
 				</section>
-
-				<!-- Illustration -->
-				<div class=" pt-5 pb-10 container">
-					<div class=" flex justify-center h-60"><img src="/img-illustration-mathilde-decoux-portfolio.png" alt=""></div>
-				</div>
 
 			</main>
 

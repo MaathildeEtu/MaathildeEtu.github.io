@@ -7,7 +7,7 @@
     font-family: 'Gliker';
     src: url('/fonts/Gliker-Black.woff2') format('woff2'),
         url('/fonts/Gliker-Black.woff') format('woff');
-    font-weight: 800; /* Poids normal */
+    font-weight: 900; /* Poids normal */
     font-style: normal;
     font-stretch: normal;
 }
@@ -18,7 +18,7 @@
     font-family: 'Gliker';
     src: url('/fonts/Gliker-BlackCondensed.woff2') format('woff2'),
         url('/fonts/Gliker-BlackCondensed.woff') format('woff');
-    font-weight: 800; /* Poids normal */
+    font-weight: 900; /* Poids normal */
     font-style: normal;
     font-stretch: condensed;
 }
@@ -26,7 +26,7 @@
     font-family: 'Gliker';
     src: url('/fonts/Gliker-BlackExtraCondensed.woff2') format('woff2'),
         url('/fonts/Gliker-BlackExtraCondensed.woff') format('woff');
-    font-weight: 800; /* Poids normal */
+    font-weight: 900; /* Poids normal */
     font-style: normal;
     font-stretch: extra-condensed;
 }
@@ -34,7 +34,7 @@
     font-family: 'Gliker';
     src: url('/fonts/Gliker-BlackSemiCondensed.woff2') format('woff2'),
         url('/fonts/Gliker-BlackSemiCondensed.woff') format('woff');
-    font-weight: 800; /* Poids normal */
+    font-weight: 900; /* Poids normal */
     font-style: normal;
     font-stretch: semi-condensed;
 }
@@ -45,7 +45,7 @@
     font-family: 'Gliker';
     src: url('/fonts/Gliker-BlackExpanded.woff2') format('woff2'),
         url('/fonts/Gliker-BlackExpanded.woff') format('woff');
-    font-weight: 800; /* Poids normal */
+    font-weight: 900; /* Poids normal */
     font-style: normal;
     font-stretch: expanded;
 }
@@ -53,7 +53,7 @@
     font-family: 'Gliker';
     src: url('/fonts/Gliker-BlackExtraExpanded.woff2') format('woff2'),
         url('/fonts/Gliker-BlackExtraExpanded.woff') format('woff');
-    font-weight: 800; /* Poids normal */
+    font-weight: 900; /* Poids normal */
     font-style: normal;
     font-stretch: extra-expanded;
 }
@@ -61,7 +61,7 @@
     font-family: 'Gliker';
     src: url('/fonts/Gliker-BlackSemiExpanded.woff2') format('woff2'),
         url('/fonts/Gliker-BlackSemiExpanded.woff') format('woff');
-    font-weight: 800; /* Poids normal */
+    font-weight: 900; /* Poids normal */
     font-style: normal;
     font-stretch: semi-expanded;
 }
@@ -72,7 +72,7 @@
     font-family: 'Gliker';
     src: url('/fonts/Gliker-Bold.woff2') format('woff2'),
         url('/fonts/Gliker-Bold.woff') format('woff');
-    font-weight: 800; /* Poids normal */
+    font-weight: 400; /* Poids normal */
     font-style: normal;
     font-stretch: normal;
 }
@@ -83,7 +83,7 @@
     font-family: 'Gliker';
     src: url('/fonts/Gliker-BoldCondensed.woff2') format('woff2'),
         url('/fonts/Gliker-BoldCondensed.woff') format('woff');
-    font-weight: 800; /* Poids normal */
+    font-weight: 400; /* Poids normal */
     font-style: normal;
     font-stretch: condensed;
 }
@@ -91,7 +91,7 @@
     font-family: 'Gliker';
     src: url('/fonts/Gliker-BoldExtraCondensed.woff2') format('woff2'),
         url('/fonts/Gliker-BoldExtraCondensed.woff') format('woff');
-    font-weight: 800; /* Poids normal */
+    font-weight: 400; /* Poids normal */
     font-style: normal;
     font-stretch: extra-condensed;
 }
@@ -102,7 +102,7 @@
     font-family: 'Gliker';
     src: url('/fonts/Gliker-BoldExpanded.woff2') format('woff2'),
         url('/fonts/Gliker-BoldExpanded.woff') format('woff');
-    font-weight: 800; /* Poids normal */
+    font-weight: 400; /* Poids normal */
     font-style: normal;
     font-stretch: expanded;
 }
@@ -110,7 +110,7 @@
     font-family: 'Gliker';
     src: url('/fonts/Gliker-BoldExtraExpanded.woff2') format('woff2'),
         url('/fonts/Gliker-BoldExtraExpanded.woff') format('woff');
-    font-weight: 800; /* Poids normal */
+    font-weight: 400; /* Poids normal */
     font-style: normal;
     font-stretch: extra-expanded;
 }

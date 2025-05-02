@@ -67,18 +67,18 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 	</head>
 	<body class=" bg-white-light">
 
-		<!-- Head -->
-		<header class=" bg-gradient-head-green-light bg-center bg-cover">
-			
-			<Navigation />
+		<Navigation />
 
+		<!-- Head -->
+		<header class=" bg-gradient-head bg-center bg-cover">
+				
 			<!-- Container -->
 			<div class="container">
 
 				<!-- Head - Content -->
-				<div class=" relative flex flex-col pt-16 pb-16">
+				<div class=" relative flex flex-col pt-52 pb-16">
 
-					<div class=" z-10 flex flex-row justify-center pt-4 pb-4">
+					<div class=" z-10 flex flex-row justify-center pt-2 pb-2">
 						<h2 class=" text-center uppercase text-6xl xl:text-7xl font-bold ">{SITE_BLOG}</h2>
 					</div>
 
@@ -86,7 +86,6 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 
 				</div>
 			</div>
-
 		</header>
 
 		<main class=" m-4 sm:m-0">

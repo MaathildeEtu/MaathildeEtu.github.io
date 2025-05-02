@@ -32,7 +32,7 @@ const { title, description, pubDate, updatedDate, heroImage, tags, clients, cont
 			<!-- Container -->
 			<div class="container">
 				<!-- Head - Content -->
-				<div class=" relative flex flex-col py-4">
+				<div class=" relative flex flex-col py-4 pt-40">
 					<div class=" z-10 flex flex-row justify-center">
 					</div>
 				</div>
@@ -66,7 +66,7 @@ const { title, description, pubDate, updatedDate, heroImage, tags, clients, cont
 							<h1 class=" font-bold text-2xl text-center lg:text-4xl pb-4">{title}</h1>
 							<ul class=" flex flex-row flex-wrap justify-center gap-1">
 								{tags.map((tags) => (
-									<li class=" px-4 py-1 max-w-max rounded-lg bg-[#D9A324] hover:bg-[#B5881E] text-white text-xs">#{tags}</li>
+									<li class=" px-4 py-1 max-w-max rounded-lg bg-yellow-base hover:bg-yellow-dark text-white text-xs">#{tags}</li>
 								))}
 							</ul>
 						</div>
@@ -77,20 +77,20 @@ const { title, description, pubDate, updatedDate, heroImage, tags, clients, cont
 						<!-- Projet -->
 						<div class=" flex flex-col mt-4 pb-8 gap-4 lg:flex-row md:gap-8 lg:gap-16">
 							<div class=" md:w-1/2 lg:w-2/3 py-4 flex flex-col gap-4">
-								<h2 class=" uppercase font-bold text-green-dark-800">Le brief</h2>
+								<h2 class=" uppercase font-bold text-green-dark-800 text-4xl">Le brief</h2>
 								<div class=" flex flex-col gap-1">
-									<h3>Le client</h3>
-									<p>Le client pour ce projet était <span class=" font-bold">{clients}</span></p>
+									<h3 class=" font-avenir font-bold text-3xl pb-2">Le client</h3>
+									<p class=" pl-2">Le client pour ce projet était <span class=" font-extrabold text-green-dark">{clients}</span></p>
 								</div>
 
 								<div class=" flex flex-col gap-1">
-									<h3>Le contexte</h3>
-									<p>{contexte}</p>
+									<h3 class=" font-avenir font-bold text-3xl pb-2">Le contexte</h3>
+									<p class=" pl-2">{contexte}</p>
 								</div>
 
 								<div class=" flex flex-col gap-1">
-									<h3>Objectifs</h3>
-									<ul class="flex flex-col gap-2">
+									<h3 class=" font-avenir font-bold text-3xl pb-2">Objectifs</h3>
+									<ul class="flex flex-col gap-2 pl-4">
 										{objectifs.map((objectifs) => (
 											<li><p class="leading-4 text-lg font-semibold">- {objectifs.gras} <span class="font-light">{objectifs.light}</span></p></li>
 										))}
@@ -98,11 +98,11 @@ const { title, description, pubDate, updatedDate, heroImage, tags, clients, cont
 								</div>
 							</div>
 
-							<div class=" md:w-1/2 lg:w-1/3 bg-green-dark-800 p-6 rounded-2xl text-white max-h-min">
-								<h3 class=" uppercase font-bold">Livrables attendus</h3>
-								<ul class="flex flex-col gap-2">
+							<div class=" md:w-1/2 lg:w-1/3 bg-green-base p-6 rounded-2xl text-white max-h-min">
+								<h3 class=" font-avenir font-bold text-3xl pb-2">Livrables attendus</h3>
+								<ul class="flex flex-col gap-2 pl-2">
 									{livrables.map((livrables) => (
-										<li class="flex flex-col text-lg font-medium">> {livrables.title} :<p class=" texte-sm font-light">{livrables.description}</p></li>
+										<li class="flex flex-col text-lg font-avenir font-bold">> {livrables.title} :<p class=" texte-sm font-light">{livrables.description}</p></li>
 									))}
 								</ul>
 							</div>
