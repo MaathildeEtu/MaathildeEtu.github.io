@@ -25,20 +25,24 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_ABOUT } from '../consts';
 		<!-- JavaScript pour gérer l'ouverture/fermeture -->
 		<script>
 			document.addEventListener("DOMContentLoaded", () => {
-				const toggleBtn = document.getElementById("toggle-btn");
-				const missionList = document.getElementById("mission-list");
-			
+				const toggleBtn = document.getElementById("toggleBtn");
+				const missionList = document.getElementById("missionList");
+
+				if (toggleBtn && missionList) {
 				toggleBtn.addEventListener("click", () => {
 					if (missionList.classList.contains("max-h-0")) {
-						missionList.classList.remove("max-h-0", "opacity-0");
-						missionList.classList.add("max-h-96", "opacity-100");
-						toggleBtn.innerHTML = '<p class="text-sm text-white font-avenir font-bold">Masquer les missions</p>';
+					missionList.classList.remove("max-h-0", "opacity-0");
+					missionList.classList.add("max-h-96", "opacity-100");
+					toggleBtn.innerHTML = '<p class="text-sm text-white font-avenir font-bold">Masquer les missions</p>';
 					} else {
-						missionList.classList.remove("max-h-96", "opacity-100");
-						missionList.classList.add("max-h-0", "opacity-0");
-						toggleBtn.innerHTML = '<p class="text-sm text-white font-avenir font-bold">Mes missions</p>';
+					missionList.classList.remove("max-h-96", "opacity-100");
+					missionList.classList.add("max-h-0", "opacity-0");
+					toggleBtn.innerHTML = '<p class="text-sm text-white font-avenir font-bold">Mes missions</p>';
 					}
 				});
+				} else {
+					console.warn("toggleBtn or missionList not found in the DOM");
+				}
 			});
 		</script>
 		
