@@ -30,7 +30,6 @@ body {
 	font-size: 20px;
 	line-height: 1.7;
     background-color: rgb(250, 250, 250);
-    /* background-color: white; */
 }
 
 
@@ -194,3 +193,10 @@ img {
         max-width: 1300px;
     }
 }
+
+
+.fade-out {
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}  

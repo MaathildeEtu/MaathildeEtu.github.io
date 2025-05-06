@@ -2,7 +2,6 @@
 
 ---
 
-<!-- Nav -->
 <script>
     window.addEventListener('scroll', function() {
         const navbar = document.getElementById('navbar');
@@ -39,31 +38,35 @@
 </script>
 
 <!-- Nav -->
-<nav class="m-4 sm:m-0 py-6 fixed z-50 w-full bg-white shadow-lg transition-all duration-300" id="navbar">
+<nav class="backdrop-blur-sm bg-green-base bg-opacity-80 m-4 sm:m-0 py-6 fixed z-50 w-full  shadow-lg transition-all duration-300 " id="navbar">
 
     <!-- Nav - Content -->
     <div class="flex flex-col md:flex-row items-center justify-between gap-4 py-4 px-40 transition-all duration-300" id="nav-content">
         
         <a href="/">
-            <p class="text-center font-gliker text-5xl transition-all duration-300" id="portfolio-title">Portfolio</p>
-            <p class="text-center font-gliker text-sm uppercase text-blue-base transition-all duration-300" id="name-title">Mathilde <span class="font-avenir">DECOUX</span></p>
+            <p class="text-center font-gliker text-5xl text-white transition-all duration-300" id="portfolio-title">Portfolio</p>
+            <p class="text-center font-gliker text-sm uppercase text-white transition-all duration-300" id="name-title">Mathilde <span class="font-avenir">DECOUX</span></p>
         </a>
 
-        <ul class="relative flex flex-row gap-0 md:gap-2">
-            <li class="relative py-1 px-4 text-black">
-                <a class="text-sm md:text-lg hover:before:content hover:before:absolute hover:before:w-1/2 hover:before:h-[12px] hover:before:rounded-lg hover:before:right-[5px] hover:before:top-[10px] hover:before:bg-yellow-base hover:before:-z-10 hover:before:animate-pulse" href="/blog">Projets</a>
+        <ul class=" relative flex flex-row gap-0 md:gap-2">
+            <li class=" py-1 px-4">
+                <a class=" text-white text-base md:text-lg" href="/home">Home</a>
             </li>
-            <li class="relative py-1 px-4 text-black">
-                <a class="text-sm md:text-lg hover:before:content hover:before:absolute hover:before:w-1/2 hover:before:h-[12px] hover:before:rounded-lg hover:before:left-[5px] hover:before:bottom-[10px] hover:before:bg-yellow-base hover:before:-z-10 hover:before:animate-pulse" href="/about">À Propos</a>
+            <li class=" py-1 px-4 text-black">
+                <a class=" text-white text-base md:text-lg" href="/blog">Projets</a>
             </li>
-            <li class="relative py-1 px-4 text-black">
-                <a class="text-sm md:text-lg text-white bg-green-base hover:bg-green-dark px-4 pb-2 pt-3 rounded-lg" href="/contact">Contact</a>
+            <li class=" py-1 px-4 text-black">
+                <a class=" text-white text-base md:text-lg" href="/about">À Propos</a>
+            </li>
+            <li class=" relative py-1 px-4 text-black">
+                <a class=" text-green-base text-base md:text-lg bg-white px-4 pb-2 pt-3 rounded-lg" href="/contact">Contact</a>
             </li>
 
             <div class="absolute w-14 top-[40px] -right-[20px] rotate-[150deg] md:-top-[30px] md:-right-[25px] md:rotate-[45deg]">
-                <img class="animate-bounce" src="./element/element-portfolio-mathilde-decoux-fleche-green-dark-3.svg" alt="">
+                <img class="animate-bounce" src="./element/element-portfolio-mathilde-decoux-fleche-black-3.svg" alt="">
             </div>
         </ul>
         
     </div>
 </nav>
+<!-- Nav -->
