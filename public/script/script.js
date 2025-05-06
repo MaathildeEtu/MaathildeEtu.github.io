@@ -33,6 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// Redirection
 	setTimeout(() => {
-		window.location.href = '/blog';
-	}, 6000);
+		window.location.href = '/home';
+	}, 5500);
 });
