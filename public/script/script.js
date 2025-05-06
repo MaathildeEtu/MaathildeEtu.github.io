@@ -1,29 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
-	// Sélection des éléments
 	const intro = document.getElementById('intro');
 	const text = document.getElementById('intro-text');
 	const title = document.getElementById('intro-title');
 	const tags = document.getElementById('intro-tags');
 
-	// Animation du bloc principal
-	intro.classList.remove('opacity-0', 'translate-y-10');
-	intro.classList.add('opacity-100', 'translate-y-0');
-
-	// Animation du texte "Mathilde Decoux"
+	// Animation d'apparition (durée lente, enchaînement rapide)
 	setTimeout(() => {
-		text.classList.remove('opacity-0', 'translate-y-4');
-		text.classList.add('opacity-100', 'translate-y-0');
+		intro.classList.replace('opacity-0', 'opacity-100');
+		intro.classList.replace('scale-95', 'scale-100');
 	}, 300);
 
-	// Animation du titre "Portfolio"
 	setTimeout(() => {
-		title.classList.remove('opacity-0', 'translate-y-4');
-		title.classList.add('opacity-100', 'translate-y-0');
-	}, 600);
+		text.classList.replace('opacity-0', 'opacity-100');
+		text.classList.replace('scale-95', 'scale-100');
+	}, 600); // enchaînement rapide
 
-	// Animation de la liste de tags
 	setTimeout(() => {
-		tags.classList.remove('opacity-0', 'translate-y-4');
-		tags.classList.add('opacity-100', 'translate-y-0');
+		title.classList.replace('opacity-0', 'opacity-100');
+		title.classList.replace('scale-95', 'scale-100');
 	}, 900);
+
+	setTimeout(() => {
+		tags.classList.replace('opacity-0', 'opacity-100');
+		tags.classList.replace('scale-95', 'scale-100');
+	}, 1200);
+
+	// Disparition
+	setTimeout(() => {
+		intro.classList.replace('opacity-100', 'opacity-0');
+		intro.classList.replace('scale-100', 'scale-110');
+	}, 4500);
+
+	// Redirection
+	setTimeout(() => {
+		window.location.href = '/blog';
+	}, 6000);
 });

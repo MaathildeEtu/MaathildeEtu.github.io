@@ -30,27 +30,26 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 	<body class="bg-blue-base">
 
         <!-- PAGE INTRO -->
-        <div id="intro" class="h-screen flex flex-col justify-center items-center opacity-0 translate-y-10 transition-all duration-1000">
-
-            <p id="intro-text" class="text-base lg:text-3xl font-gliker font-bold uppercase text-white opacity-0 translate-y-4 transition-all duration-700">
-            Mathilde <span class="font-avenir">DECOUX</span>
+        <div id="intro" class="h-screen flex flex-col justify-center items-center opacity-0 scale-95 transition-all duration-1000 ease-in-out">
+            <p id="intro-text" class="text-base lg:text-3xl font-gliker font-bold uppercase text-white opacity-0 scale-95 transition-all duration-700 ease-in-out">
+                Mathilde <span class="font-avenir">DECOUX</span>
             </p>
-    
-            <h1 id="intro-title" class="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-gliker font-bold text-white uppercase opacity-0 translate-y-4 transition-all duration-700">
-            Portfolio
+        
+            <h1 id="intro-title" class="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-gliker font-bold text-white uppercase opacity-0 scale-95 transition-all duration-700 ease-in-out">
+                Portfolio
             </h1>
-
-            <ul id="intro-tags" class="opacity-0 translate-y-4 transition-all duration-700 p-2 hidden md:visible md:flex md:flex-row md:flex-wrap md:justify-center md:gap-4">
+        
+            <ul id="intro-tags" class="p-2 hidden md:flex md:flex-row md:flex-wrap md:justify-center md:gap-4 opacity-0 scale-95 transition-all duration-700 ease-in-out">
                 {tags.map((tag) => (
-                    <li class="md:py-1 md:px-4 text-white h-5 flex">
+                    <li class="md:py-1 md:px-4 text-white h-5 flex" key={tag}>
                         <a class="relative text-white text-sm md:text-lg" href={`/blog/${tag}/`}>
                             #{tag}
                         </a>
                     </li>
                 ))}
             </ul>
-    
         </div>
+        
     
     </body>    
     
