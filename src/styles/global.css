@@ -195,8 +195,40 @@ img {
 }
 
 
+.stack-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    z-index: 0;
+    transform: scale(1);
+    transition: opacity 1s ease, transform 1s ease;
+}
+.stack-slide.visible {
+    opacity: 1;
+    z-index: 10;
+}
+.final-slide.visible {
+    transform: scale(1);
+}
+.final-slide {
+    transform: scale(0.9);
+}
+
+
+
+
+
+
 .fade-out {
     opacity: 0;
     transform: translateY(-30px);
     transition: opacity 0.8s ease, transform 0.8s ease;
 }  
+
+.outline-text-0 { -webkit-text-stroke-width: .5px; }
+.outline-text-1 { -webkit-text-stroke-width: 1px; }
+.outline-text-2 { -webkit-text-stroke-width: 1.5px; }
+.outline-text-3 { -webkit-text-stroke-width: 2px; }
+
+.outline-text-white { color: transparent; -webkit-text-stroke-color: white; }
+.outline-text-blue { color: transparent; -webkit-text-stroke-color: var(--accent-dark);}

@@ -6,7 +6,7 @@ import { getCollection } from 'astro:content';
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
-const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
+// const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 
 ---
 
@@ -31,25 +31,54 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 
         <!-- PAGE INTRO -->
 
-        <div id="intro" class="h-screen flex flex-col justify-center items-center opacity-0 scale-95 transition-all duration-1000 ease-in-out">
-            <p id="intro-text" class="text-base lg:text-3xl font-gliker font-bold uppercase text-white opacity-0 scale-95 transition-all duration-700 ease-in-out">
-                Mathilde <span class="font-avenir">DECOUX</span>
-            </p>
+        <div id="stack-container">
+            <div class="stack-slide h-screen w-screen flex items-center justify-center">
+                <h1 class="text-center text-3xl sm:text-5xl lg:text-8xl font-sans text-white">Graphisme</h1>
+            </div>
+
+            <div class="stack-slide h-screen w-screen flex items-center justify-center">
+                <h1 class="text-center text-3xl sm:text-5xl lg:text-8xl font-sans text-white">Événementiel</h1>
+            </div>
+
+            <div class="stack-slide h-screen w-screen flex items-center justify-center">
+                <h1 class="text-center text-3xl sm:text-5xl lg:text-8xl font-serif text-white">Webdesign</h1>
+            </div>
+
+            <div class="stack-slide h-screen w-screen flex items-center justify-center">
+                <h1 class="text-center text-3xl sm:text-5xl lg:text-8xl font-gliker text-white">Photographie</h1>
+            </div>
+
+            <div class="stack-slide h-screen w-screen flex items-center justify-center">
+                <h1 class="text-center text-3xl sm:text-5xl lg:text-8xl font-gliker text-white">Bénévolat</h1>
+            </div>
+
+            <div class="stack-slide h-screen w-screen flex items-center justify-center">
+                <h1 class="text-center text-3xl sm:text-5xl lg:text-8xl font-sans font-light text-white">Réseaux Sociaux</h1>
+            </div>
+
+            <div class="stack-slide h-screen w-screen flex items-center justify-center">
+                <h1 class="text-center text-3xl sm:text-5xl lg:text-8xl font-sans font-light text-white">UI/UX</h1>
+            </div>
+
+            <div class="stack-slide h-screen w-screen flex items-center justify-center">
+                <h1 class="text-center text-3xl sm:text-5xl lg:text-8xl font-sans font-light text-white">Gestion Projet</h1>
+            </div>
+
+            <div class="final-slide stack-slide h-screen w-screen flex items-center justify-center flex-col">
+                <h1 class="text-3xl sm:text-5xl lg:text-9xl font-gliker font-light text-white">Port<span class="outline-text-white outline-text-2 ">folio</span></h1>
+                <p class=" text-lg lg:text-4xl font-avenir text-white">Mathilde <span class=" font-gliker">DECOUX</span></p>
+            </div>
+        </div>
         
-            <h1 id="intro-title" class="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-gliker font-bold text-white uppercase opacity-0 scale-95 transition-all duration-700 ease-in-out">
-                Portfolio
-            </h1>
-        
-            <ul id="intro-tags" class="p-2 hidden md:flex md:flex-row md:flex-wrap md:justify-center md:gap-4 opacity-0 scale-95 transition-all duration-700 ease-in-out">
-                {tags.map((tag) => (
-                    <li class="md:py-1 md:px-4 text-white h-5 flex">
-                        <a class="relative text-white text-sm md:text-lg" href={`/blog/${tag}/`}>
-                            #{tag}
-                        </a>
-                    </li>
-                ))}
-            </ul>
-        </div>   
+        <!-- <ul id="intro-tags" class="p-2 hidden md:flex md:flex-row md:flex-wrap md:justify-center md:gap-4 opacity-0 scale-95 transition-all duration-700 ease-in-out">
+            {tags.map((tag) => (
+                <li class="md:py-1 md:px-4 text-white h-5 flex">
+                    <a class="relative text-white text-sm md:text-lg" href={`/blog/${tag}/`}>
+                        #{tag}
+                    </a>
+                </li>
+            ))}
+        </ul> --> 
     
     </body>    
     
